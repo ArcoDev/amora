@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
+    <!-- CDN Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--CDN font awasome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Amora</title>
+</head>
+
+<body>
+    <!-- Whatsap Flotante -->
+    <a href="https://wa.link/zdwtie" class="float" target="_blank">
+        <i class="fab fa-whatsapp my-float"></i>
+    </a>
+    <!--Navbar-->
+    <nav id="expandir" class="navegacion">
+        <a id="logo" href="#">
+            <div class="logo">
+            </div>
+        </a>
+        <ul id="items" class="items">
+            <a href="index.html">
+                <li>Inicio</li>
+            </a>
+            <a href="#nosotros">
+                <li>Nosotros</li>
+            </a>
+            <!--<a href="https://buff.ly/36eGPvn" target="_blank">-->
+            <a href="./includes/catalogo.php">
+                <li>Catálogo</li>
+            </a>
+            <a href="#contacto">
+                <li>Contacto</li>
+            </a>
+        </ul>
+        <i id="bars" class="fa fa-bars nav-mov" onclick="abrirNav();"></i>
+        <i id="close" class="fas fa-times nav-mov" onclick="cerrarNav();"></i>
+    </nav>
+    <!-- Carousel -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="prueba"></div>
+                <img class="d-block w-100 imgMov img-fluid" src="./assets/img/Banner1.jpg" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 imgMov" src="./assets/img/Banner2.jpg" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 imgMov" src="./assets/img/Banner3.jpg" alt="Third slide">
+            </div>
+        </div>
+    </div>
+    <!-- Nosotros -->
+    <section id="nosotros" class="nosotros">
+        <div class="caja1">
+            <div class="imgNos"></div>
+        </div>
+        <div class="caja2">
+            <h2>Nosotros</h2>
+            <p><span>Nos dedicamos a la venta de joyería</span> en plata con detalles artesanales trabajada con plata .925 ley y manos 100% mexicanas, apoyando la economía mexicana.</p>
+            <a href="./includes/catalogo.php" target="_blank">Catálogo</a>
+        </div>
+    </section>
+
+    <!--Feed de instagram-
+    <div class="elfsight-app-47cf4ccd-e946-4096-ade2-e5847edcb7ae"></div>-->
+    <!-- Galeria -->
+    <section class="galeria">
+        <h2>Galería</h2>
+        <div class="imagenes">
+            <img loading="lazy" src="./assets/img/categorias/anillos/anillo1.png" alt="">
+            <img loading="lazy" src="./assets/img/categorias/anillos/anillo2.png" alt="">
+            <img loading="lazy" src="./assets/img/categorias/aretes/aretes1.png" alt="">
+            <img loading="lazy" src="./assets/img/categorias/aretes/aretes2.png" alt="">
+            <img loading="lazy" src="./assets/img/categorias/pulseras/pulseras1.png" alt="">
+            <img loading="lazy" src="./assets/img/categorias/pulseras/pulseras2.png" alt="">
+            <img loading="lazy" src="./assets/img/categorias/collares//collar24.png" alt="">
+            <img loading="lazy" src="./assets/img/categorias/collares/collar21.png" alt="">
+        </div>
+        <a href="./includes/catalogo.php">Ver más</a>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="contacto">
+        <div class="txtContacto">
+            <h2>Contáctanos</h2>
+            <div class="redes">
+                <a href="https://www.facebook.com/amora_joyeria/" target="_blank"><i
+                        class="fab fa-facebook iconRed"></i></a>
+                <a href="https://www.instagram.com/AmoraJoyeria/" target="_blank"><i
+                        class="fab fa-instagram iconRed"></i></a>
+            </div>
+        </div>
+        <div class="formulario">
+            <!--<form action="./includes/email.php" method="POST" id="form" onsubmit="return validar();">
+                <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre">
+                <input type="email" name="correo" id=correo" placeholder="Ingresa tu email">
+                <input type="text" name="mensaje" id="mensaje" placeholder="Dejanos tu mensaje">
+                <div class="g-recaptcha" data-sitekey="6Ldp848aAAAAAK8-uMqyb38H8ksv0zVtv2vn_h2z"
+                    style="margin: 15px auto 0 auto;"></div>
+                <button type="submit">Enviar</button>
+                <p class="alertas" id="alertas"></p>
+            </form>-->
+            <div class="correo">
+                <a href="mailto:contacto@amorajoyeria.com">
+                    <i class="far fa-envelope"></i>
+                    <p>contacto@amorajoyeria.com</p>
+                </a>
+            </div>
+            <div class="telefono">
+                <a href="tel:8711159321">
+                    <i class="fas fa-phone"></i>
+                    <p>871 115 9321</p>
+                </a>
+            </div>
+
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <h2>Sitio Desarrollado por <a href="https://awsoftware.mx/" target="_blank"><span>A W Software</span></a></h2>
+    </footer>
+    <!--reCaptcha-->
+    <script src='https://www.google.com/recaptcha/api.js?hl=es' async defer></script>
+    <!--Feed de instagram-->
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <!--Script Personal -->
+    <script src="./js/main.js"></script>
+    <script src="./js/contacto.js"></script>
+    <!-- CDN Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
