@@ -18,7 +18,7 @@ include_once "templates/header.php";
                     <input type="email" class="form-control" name = "correo" placeholder="Ingresa tu correo electronico">
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" class="form-control" name = "contrasena" placeholder="PasswIngresa tu contrasena">
+                    <input type="password" class="form-control" name = "contrasena" placeholder="Ingresa tu contrasena">
                 </div>
                 <div class="row">
                         <div class="col-xs-12">

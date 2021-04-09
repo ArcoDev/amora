@@ -39,6 +39,7 @@ $(document).ready(function() {
             dataType: 'json',
             success: function(data) {
                 var resultado = data;
+                console.log(data);
             }
         });
     });

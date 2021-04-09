@@ -38,5 +38,5 @@ if(isset($_POST["agregar-usuario"])) {
 
 /* Login para igresar al sistema */
 if(isset($_POST["login-usuario"])) {
-
+    die(json_encode($_POST));
 }
