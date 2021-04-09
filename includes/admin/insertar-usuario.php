@@ -38,5 +38,45 @@ if(isset($_POST["agregar-usuario"])) {
 
 /* Login para igresar al sistema */
 if(isset($_POST["login-usuario"])) {
-    die(json_encode($_POST));
+    $correoUsr = $_POST['correo'];
+    $contrasenaUsr = $_POST['contrasena'];
+    try {
+        include_once "functions/funciones.php";
+        $stmt = $con->prepare("SELECT * FROM usuarios where correo = ?;");
+        $stmt->bind_param("s", $correoUsr);
+        $stmt->execute();
+        $stmt->bind_result($id_usr, $correo_usr, $nombre_usr, $contrasena_usr);
+        if($stmt->affected_rows) {
+             $existe = $stmt->fetch();
+            if($existe) {
+                /*if(password_verify($contrasenaUsr, $contrasena_usr)){
+                    $respuesta = array(
+                        'respuesta' => 'exitoso',
+                        'usuario' => $nombre_usr
+                            
+                    );
+                } else {
+                    $respuesta = array(
+                        'respuesta' => 'fallo'
+                    );
+                }  */
+                session_start();
+                $_SESSION['usuario'] =  $correo_usr;
+                $_SESSION['nombre'] = $nombre_usr;
+                $respuesta = array(
+                    'respuesta' => 'si_existe',
+                    'usuario' => $nombre_usr
+                );
+            } else {
+                $respuesta = array(
+                    'respuesta' => 'no_existe'
+                );
+            }
+        }
+        $stmt->close();
+        $con->close();
+    } catch (Exception $e) {
+        echo "Error: ".$e->getMessage();
+    }
+    die(json_encode($respuesta));
 }

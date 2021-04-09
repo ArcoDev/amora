@@ -12,7 +12,12 @@ include_once "templates/header.php";
         <!-- /.login-logo -->
         <div class="login-box-body">
             <p class="login-box-msg">Inicia sesion</p>
-
+            <?php
+            session_start();
+            echo "<pre>";
+                var_dump($_SESSION);
+            echo "</pre>";
+            ?>
             <form name="login-usuario-form" id="login-usuario" method="post" action="insertar-usuario.php">
                 <div class="form-group has-feedback">
                     <input type="email" class="form-control" name = "correo" placeholder="Ingresa tu correo electronico">

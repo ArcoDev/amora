@@ -39,7 +39,19 @@ $(document).ready(function() {
             dataType: 'json',
             success: function(data) {
                 var resultado = data;
-                console.log(data);
+                if (resultado.respuesta == 'si_existe') {
+                    swal(
+                        'Login Correcto!',
+                        'Bienvenid@ ' + resultado.usuario + '!!!',
+                        'success'
+                    )
+                } else {
+                    swal(
+                        'Ooops!',
+                        'Usuario o contrasena incorrectos',
+                        'error'
+                    )
+                }
             }
         });
     });
