@@ -1,5 +1,6 @@
 <?php
 /* AGregado los tempaltes de la plantilla */
+  include_once "functions/sesiones.php";
   include_once "functions/funciones.php";
   include_once "templates/header.php";
   include_once "templates/barra.php";
@@ -32,16 +33,17 @@
               <div class="box-body">
                 <div class="form-group">
                   <label for="correo">Correo Electronico</label>
-                  <input autocomplete ="off" type="email" class="form-control" id="correo" name="correo" placeholder="Ingresa tu correo">
+                  <input autocomplete="off" type="email" class="form-control" id="correo" name="correo"
+                    placeholder="Ingresa tu correo">
                 </div>
                 <div class="form-group">
                   <label for="nombre">Nombre</label>
-                  <input autocomplete ="off" type="text" class="form-control" id="nombre" name="nombre"
+                  <input autocomplete="off" type="text" class="form-control" id="nombre" name="nombre"
                     placeholder="Ingresa tu nombre completo">
                 </div>
                 <div class="form-group">
                   <label for="password">Contrasena</label>
-                  <input autocomplete ="off" type="password" class="form-control" id="password" name="contrasena"
+                  <input autocomplete="off" type="password" class="form-control" id="password" name="contrasena"
                     placeholder="Contrasena para iniciar sesion">
                 </div>
                 <div class="box-footer">
