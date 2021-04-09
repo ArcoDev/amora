@@ -1,6 +1,6 @@
 $(document).ready(function() {
     /* Crear un usuario y mandar info a la BD */
-    $('#crear-usuario').on('submit', function(e) {
+    $('#guardar-registro').on('submit', function(e) {
         e.preventDefault();
         //lo que hace serializeArray() es iterar en todo los campos y nos crea unos objetos con los datos
         var datos = $(this).serializeArray();
@@ -10,17 +10,31 @@ $(document).ready(function() {
             url: $(this).attr('action'),
             dataType: 'json',
             success: function(data) {
+                console.log(data);
                 var resultado = data;
-                if (resultado.respuesta == 'exito') {
+                if (resultado.respuesta === 'exito') {
                     swal(
-                        'Correcto!',
-                        'El usuario se ha creado correctamente',
+                        'El usuario!',
+                        'Se guardo correctamente',
                         'success'
                     )
                 } else {
                     swal(
                         'Ooops!',
                         'No se puede crear un usuario con el mismo correo electronico.',
+                        'error'
+                    )
+                }
+                if (resultado.respuesta === 'actualizar') {
+                    swal(
+                        'Felicidades',
+                        'Se editaron correctamnte los datos',
+                        'success'
+                    )
+                } else {
+                    swal(
+                        'Ooops!',
+                        'No se pudo ediar la iformacion.',
                         'error'
                     )
                 }
@@ -39,7 +53,7 @@ $(document).ready(function() {
             dataType: 'json',
             success: function(data) {
                 var resultado = data;
-                if (resultado.respuesta == 'si_existe') {
+                if (resultado.respuesta === 'si_existe') {
                     swal(
                         'Login Correcto!',
                         'Bienvenid@ ' + resultado.usuario + '!!!',

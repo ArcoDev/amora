@@ -29,7 +29,7 @@
           </div>
           <div class="box-body">
             <!-- form start -->
-            <form role="form" name="crear-usuario" id="crear-usuario" method="post" action="insertar-usuario.php">
+            <form role="form" name="guardar-registro" id="guardar-registro" method="post" action="modelo-usuario.php">
               <div class="box-body">
                 <div class="form-group">
                   <label for="correo">Correo Electronico</label>
@@ -47,7 +47,7 @@
                     placeholder="Contrasena para iniciar sesion">
                 </div>
                 <div class="box-footer">
-                  <input type="hidden" name="agregar-usuario" value="1">
+                  <input type="hidden" name="registro" value="nuevo">
                   <button type="submit" class="btn btn-primary">Enviar</button>
                 </div>
             </form>

@@ -1,12 +1,12 @@
 <?php
 /* Crear usuarios y mandar ifo a la BD */
-if(isset($_POST["agregar-usuario"])) {
+include_once "functions/funciones.php";
+$correo = $_POST["correo"];
+$nombre = $_POST["nombre"];
+$contrasena = $_POST["contrasena"];
+$id_registroEditar = $_POST["id_registro"];
 
-    
-    $correo = $_POST["correo"];
-    $nombre = $_POST["nombre"];
-    $contrasena = $_POST["contrasena"];
-
+if($_POST['registro'] == 'nuevo') {
     $opciones = array(
         'cost' => 12
     );
@@ -32,6 +32,36 @@ if(isset($_POST["agregar-usuario"])) {
         $con->close();
     } catch (Exception $e) {
         echo "Error: ".$e->getMessage();
+    }
+    die(json_encode($respuesta));
+}
+
+/*Actualizar Registro de usuario */
+if($_POST['registro'] == 'actualizar') {
+    $opciones2 = array(
+        'cost' => 12
+    );
+    try {
+        $hash_contra = password_hash($contrasena, PASSWORD_BCRYPT, $opciones2); 
+        $stmt = $con->prepare("UPDATE usuarios SET correo = ?, nombre = ?, contrasena = ? WHERE id_usr = ?");
+        $stmt->bind_param("sssi", $correo, $nombre, $hash_contra, $id_registroEditar);
+        $stmt->execute();
+        if($stmt->affected_rows) {
+            $respuesta = array(
+                'respuesta' => 'actualizar',
+                'actualizar' => $stmt->insert_id
+            );
+        } else {
+            $respuesta + array(
+                'respuesta' => 'error'
+            );
+        }
+        $stmt->close();
+        $con->close();
+    } catch (Exception $e) {
+        $respuesta = array(
+            'respuesta' => $e->getMessage()
+        );
     }
     die(json_encode($respuesta));
 }
