@@ -45,6 +45,9 @@ $(document).ready(function() {
                         'Bienvenid@ ' + resultado.usuario + '!!!',
                         'success'
                     )
+                    setTimeout(function() {
+                        window.location.href = 'adminAmora.php';
+                    }, 2000);
                 } else {
                     swal(
                         'Ooops!',
