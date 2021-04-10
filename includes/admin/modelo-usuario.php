@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^ E_NOTICE);
 /* Crear usuarios y mandar ifo a la BD */
 include_once "functions/funciones.php";
 $correo = $_POST["correo"];

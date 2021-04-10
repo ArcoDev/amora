@@ -31,15 +31,11 @@ $(document).ready(function() {
                         'Se edito correctamente.',
                         'success'
                     );
-                    swal(
-                        'Ooops!',
-                        'No se pudieron editar los datos.',
-                        'success'
-                    );
                 }
             }
         });
     });
+
     /* Igresar a; sistema de backend mediate el login */
     $('#login-usuario').on('submit', function(e) {
         e.preventDefault();
