@@ -4,14 +4,13 @@ include_once "functions/funciones.php";
 $correo = $_POST["correo"];
 $nombre = $_POST["nombre"];
 $contrasena = $_POST["contrasena"];
-$id_registroEditar = $_POST["id_registro"];
 
 if($_POST['registro'] == 'nuevo') {
     $opciones = array(
         'cost' => 12
     );
     $contra_hashed = password_hash($contrasena, PASSWORD_BCRYPT, $opciones);
-        
+    
     try {
         include_once "functions/funciones.php";
         $stmt = $con->prepare("INSERT INTO usuarios (correo, nombre, contrasena) VALUES (?, ?, ?)");
@@ -20,8 +19,8 @@ if($_POST['registro'] == 'nuevo') {
         $id_registro=$stmt->insert_id;
         if ($id_registro > 0){
             $respuesta=array(
-                    'respuesta'=>'exito',
-                    'id_usuario'=>$id_registro
+                'respuesta'=>'exito',
+                'id_usuario'=>$id_registro
             );
         }else{
             $respuesta=array(
@@ -42,6 +41,7 @@ if($_POST['registro'] == 'actualizar') {
         'cost' => 12
     );
     try {
+        $id_registroEditar = $_POST["id_registro"];
         $hash_contra = password_hash($contrasena, PASSWORD_BCRYPT, $opciones2); 
         $stmt = $con->prepare("UPDATE usuarios SET correo = ?, nombre = ?, contrasena = ? WHERE id_usr = ?");
         $stmt->bind_param("sssi", $correo, $nombre, $hash_contra, $id_registroEditar);

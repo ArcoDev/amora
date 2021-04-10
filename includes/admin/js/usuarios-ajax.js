@@ -15,28 +15,27 @@ $(document).ready(function() {
                 if (resultado.respuesta === 'exito') {
                     swal(
                         'El usuario!',
-                        'Se guardo correctamente',
+                        'Se agrego correctamente.',
                         'success'
-                    )
+                    );
                 } else {
                     swal(
                         'Ooops!',
                         'No se puede crear un usuario con el mismo correo electronico.',
                         'error'
-                    )
+                    );
                 }
                 if (resultado.respuesta === 'actualizar') {
                     swal(
-                        'Felicidades',
-                        'Se editaron correctamnte los datos',
+                        'El usuario!',
+                        'Se edito correctamente.',
                         'success'
-                    )
-                } else {
+                    );
                     swal(
                         'Ooops!',
-                        'No se pudo ediar la iformacion.',
-                        'error'
-                    )
+                        'No se pudieron editar los datos.',
+                        'success'
+                    );
                 }
             }
         });

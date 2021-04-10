@@ -16,7 +16,7 @@
         <!-- /.login-logo -->
         <div class="login-box-body">
             <p class="login-box-msg">Inicia sesion</p>
-            <form name="login-usuario-form" id="login-usuario" method="post" action="insertar-usuario.php">
+            <form name="login-usuario-form" id="login-usuario" method="post" action="modelo-usuario.php">
                 <div class="form-group has-feedback">
                     <input type="email" class="form-control" name="correo" placeholder="Ingresa tu correo electronico">
                 </div>

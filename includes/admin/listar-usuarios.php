@@ -21,7 +21,7 @@
   <!-- Main content -->
   <section class="content">
     <div class="row">
-      <div class="col-xs-8">
+      <div class="col-xs-12">
         <div class="box">
           <div class="box-header">
           <!--<h3 class="box-title">Maneja los usuarios en esta seccion</h3>-->
