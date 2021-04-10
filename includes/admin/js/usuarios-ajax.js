@@ -36,6 +36,25 @@ $(document).ready(function() {
         });
     });
 
+    /* Eliminar registro */
+    $('.borrar_registro').on('click', function(e) {
+        e.preventDefault();
+        var id = $(this).attr('data-id');
+        var tipo = $(this).attr('data-tipo');
+        console.log("id: " + id);
+        $.ajax({
+            type: 'post',
+            data: {
+                'id': id,
+                'registro': 'eliminar'
+            },
+            url: 'modelo-' + tipo + '.php',
+            success: function(data) {
+                console.log(data);
+            }
+        });
+    });
+
     /* Igresar a; sistema de backend mediate el login */
     $('#login-usuario').on('submit', function(e) {
         e.preventDefault();
@@ -56,7 +75,7 @@ $(document).ready(function() {
                     )
                     setTimeout(function() {
                         window.location.href = 'adminAmora.php';
-                    }, 2000);
+                    }, 1000);
                 } else {
                     swal(
                         'Ooops!',

@@ -38,14 +38,20 @@ if($_POST['registro'] == 'nuevo') {
 
 /*Actualizar Registro de usuario */
 if($_POST['registro'] == 'actualizar') {
-    $opciones2 = array(
-        'cost' => 12
-    );
+    
     try {
-        $id_registroEditar = $_POST["id_registro"];
-        $hash_contra = password_hash($contrasena, PASSWORD_BCRYPT, $opciones2); 
-        $stmt = $con->prepare("UPDATE usuarios SET correo = ?, nombre = ?, contrasena = ? WHERE id_usr = ?");
-        $stmt->bind_param("sssi", $correo, $nombre, $hash_contra, $id_registroEditar);
+        if (empty($_POST['contrasena'])) {
+            $stmt = $con->prepare("UPDATE usuarios set correo =?, nombre = ?, editado = NOW() WHERE id_usr =?");
+            $stmt->bind_param("ssi", $correo, $nombre, $id_registroEditar);
+        } else {
+            $opciones2 = array(
+                'cost' => 12
+            );
+            $id_registroEditar = $_POST["id_registro"];
+            $hash_contra = password_hash($contrasena, PASSWORD_BCRYPT, $opciones2); 
+            $stmt = $con->prepare("UPDATE usuarios SET correo = ?, nombre = ?, contrasena = ?, editado = NOW() WHERE id_usr = ?");
+            $stmt->bind_param("sssi", $correo, $nombre, $hash_contra, $id_registroEditar);
+        }
         $stmt->execute();
         if($stmt->affected_rows) {
             $respuesta = array(
@@ -66,6 +72,9 @@ if($_POST['registro'] == 'actualizar') {
     }
     die(json_encode($respuesta));
 }
+if($_POST['registro'] == 'eliminar') { 
+    die(json_encode($_POST));
+}
 
 /* Login para igresar al sistema */
 if(isset($_POST["login-usuario"])) {
@@ -76,7 +85,7 @@ if(isset($_POST["login-usuario"])) {
         $stmt = $con->prepare("SELECT * FROM usuarios where correo = ?;");
         $stmt->bind_param("s", $correoUsr);
         $stmt->execute();
-        $stmt->bind_result($id_usr, $correo_usr, $nombre_usr, $contrasena_usr);
+        $stmt->bind_result($id_usr, $correo_usr, $nombre_usr, $contrasena_usr, $editado);
         if($stmt->affected_rows) {
              $existe = $stmt->fetch();
             if($existe) {
@@ -90,7 +99,9 @@ if(isset($_POST["login-usuario"])) {
                     $respuesta = array(
                         'respuesta' => 'fallo'
                     );
-                }  */
+                }
+                checar video  753 y 754
+                 */
                 session_start();
                 $_SESSION['usuario'] =  $correo_usr;
                 $_SESSION['nombre'] = $nombre_usr;

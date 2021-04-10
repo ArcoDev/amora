@@ -54,7 +54,7 @@
                       class="btn btn-warning btn-flat margin" title="Editar">
                       <i class="fas fa-pencil-alt"></i>
                     </a>
-                    <a href="#" data-id="<?php echo $usuario['id_usr']?>" data-tipo="usr"
+                    <a href="#" data-id="<?php echo $usuario['id_usr']?>" data-tipo="usuario"
                       class="btn btn-danger btn-flat margin borrar_registro" title="Eliminar">
                       <i class="fas fa-trash"></i>
                     </a>
