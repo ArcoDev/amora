@@ -2,10 +2,6 @@
 /* AGregado los tempaltes de la plantilla */
   include_once "functions/sesiones.php";
   include_once "functions/funciones.php";
-  $id = $_GET['id'];
-  if(!filter_var($id, FILTER_VALIDATE_INT)) {
-    die("Error");
-  }
   include_once "templates/header.php";
   include_once "templates/barra.php";
   include_once "templates/navegacionLateral.php"; 
@@ -17,7 +13,8 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Usuarios Amora
+      Productos de Amora
+      <small>llena el formulario para crear el producto</small>
     </h1>
   </section>
 
@@ -28,35 +25,35 @@
         <!-- Default box -->
         <div class="box">
           <div class="box-header with-border">
-            <h3 class="box-title">Editar Usuario</h3>
+            <h3 class="box-title">Guardar Productos</h3>
           </div>
           <div class="box-body">
-            <?php
-                $sql ="SELECT * FROM `usuarios` WHERE `id_usr` = $id";
-                $resultado = $con->query($sql);
-                $usuario = $resultado->fetch_assoc();
-             ?>
             <!-- form start -->
-            <form role="form" name="guardar-registro" id="guardar-registro" method="post" action="modelo-usuario.php">
+            <form role="form" name="guardar-producto" id="guardar-producto" method="post" action="modelo-productos.php">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="correo">Correo Electronico</label>
-                  <input autocomplete="off" type="email" class="form-control" id="correo" name="correo"
-                    placeholder="Ingresa tu correo" value="<?php echo $usuario['correo'] ?>">
+                  <label for="foto">URL de la foto</label>
+                  <input autocomplete="off" type="text" class="form-control" id="foto" name="foto"
+                    placeholder="Ingresa la url de la foto, ejemplo: foto.png">
                 </div>
                 <div class="form-group">
-                  <label for="nombre">Nombre</label>
+                  <label for="nombre">Nombre del producto y precio</label>
                   <input autocomplete="off" type="text" class="form-control" id="nombre" name="nombre"
-                    placeholder="Ingresa tu nombre completo" value="<?php echo $usuario['nombre'] ?>">
+                    placeholder="Ingresa el nombre del producto y su precio, ejemplo: anillo dorado, $250." >
                 </div>
+                <!-- select -->
                 <div class="form-group">
-                  <label for="password">Contrasena</label>
-                  <input autocomplete="off" type="password" class="form-control" id="password" name="contrasena" placeholder="Contrasena para iniciar sesion" >
+                  <label>Selecciona una categoria</label>
+                  <select name="categoria" class="form-control">
+                    <option value="1">1.- Anillos</option>
+                    <option value="2">2.- Aretes</option>
+                    <option value="3">3.- Collares</option>
+                    <option value="4">4.- Pulseras</option>
+                  </select>
                 </div>
                 <div class="box-footer">
-                <input type="hidden" name="registro" value="actualizar">
-                <input type="hidden" name="id_registro" value="<?php echo $id?>">
-                  <button type="submit" class="btn btn-primary">Actualizar</button>
+                  <input type="hidden" name="registro" value="nuevo">
+                  <button type="submit" class="btn btn-primary">Enviar</button>
                 </div>
             </form>
           </div>

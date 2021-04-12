@@ -57,7 +57,7 @@ require "conexion.php";
             <?php
             $consulta = $con->query("SELECT * FROM productos WHERE id_cat =1");
             while ($imagenes = mysqli_fetch_array($consulta)) {
-                echo '<img loading="lazy" class="sizeImg" title="' . $imagenes["nombre_precio"] . '" src="../assets/img/categorias/anillos/' . $imagenes["foto"] . '" alt="' . $imagenes["alt"] . '">';
+                echo '<img loading="lazy" class="sizeImg" title="' . $imagenes["nombre_precio"] . '" src="../assets/img/categorias/anillos/' . $imagenes["foto"] . '" alt="imagenes de los productos de amora">';
             }
             ?>
         </div>
@@ -68,7 +68,7 @@ require "conexion.php";
             <?php
             $consulta = $con->query("SELECT * FROM productos WHERE id_Cat = 2");
             while ($imagenes = mysqli_fetch_array($consulta)) {
-                echo '<img loading="lazy" class="sizeImg" src="../assets/img/categorias/aretes/' . $imagenes["foto"] . '" alt="' . $imagenes["alt"] . '">';
+                echo '<img loading="lazy" class="sizeImg" src="../assets/img/categorias/aretes/' . $imagenes["foto"] . '" alt="imagenes de los productos de amora">';
             }
             ?>
         </div>
@@ -78,7 +78,7 @@ require "conexion.php";
             <?php
             $consulta = $con->query("SELECT * FROM productos WHERE id_Cat = 3");
             while ($imagenes = mysqli_fetch_array($consulta)) {
-                echo '<img loading="lazy" class="sizeImg" src="../assets/img/categorias/collares/' . $imagenes["foto"] . '" alt="' . $imagenes["alt"] . '">';
+                echo '<img loading="lazy" class="sizeImg" src="../assets/img/categorias/collares/' . $imagenes["foto"] . '" alt="imagenes de los productos de amora">';
             }
             ?>
         </div>
@@ -87,7 +87,7 @@ require "conexion.php";
             <?php
             $consulta = $con->query("SELECT * FROM productos WHERE id_Cat = 4");
             while ($imagenes = mysqli_fetch_array($consulta)) {
-                echo '<img loading="lazy" class="sizeImg" src="../assets/img/categorias/pulseras/' . $imagenes["foto"] . '" alt="' . $imagenes["alt"] . '">';
+                echo '<img loading="lazy" class="sizeImg" src="../assets/img/categorias/pulseras/' . $imagenes["foto"] . '" alt="imagenes de los productos de amora">';
             }
             ?>
         </div>

@@ -1,6 +1,5 @@
 <?php 
-include_once "functions/funciones.php";
-include_once "functions/sesiones.php";
+    $nombreUsuario = $_SESSION['nombre'];
 ?>
 <body class="hold-transition skin-blue sidebar-mini">
     <!-- Site wrapper -->
@@ -27,15 +26,15 @@ include_once "functions/sesiones.php";
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <span class="hidden-xs">Hola: <?php echo $correoUsr?></span>
+                                <span class="hidden-xs">Hola: <?php echo $nombreUsuario ?></span>
                             </a>
                             <ul class="dropdown-menu">
 
-                                <!-- Menu Footer-->
+                                <!-- Menu Footer -->
                                 <li class="user-footer">
-                                    <div class="pull-left">
+                                    <!--<div class="pull-left">
                                         <a href="#" class="btn btn-success btn-flat">Ajustes</a>
-                                    </div>
+                                    </div>-->
                                     <div class="pull-right">
                                         <a href="login.php?cerrar_sesion=true" class="btn btn-success  btn-flat">Cerrar Sesion</a>
                                     </div>

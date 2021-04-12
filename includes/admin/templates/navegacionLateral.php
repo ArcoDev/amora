@@ -1,3 +1,6 @@
+<?php  
+   $nombreUsuario = $_SESSION['nombre'];
+?>
 <!-- Left side column. contains the sidebar -->
 <aside class="main-sidebar">
   <!-- sidebar: style can be found in sidebar.less -->
@@ -5,7 +8,7 @@
     <!-- Sidebar user panel -->
     <div class="user-panel">
       <div class="pull-left info">
-        <p>Christian Acosta</p>
+        <p><?php echo $nombreUsuario ?> </p>
         <a href="#"><i class="fas fa-circle text-success"></i> Online</a>
       </div>
     </div>
@@ -37,6 +40,19 @@
       </li>-->
       <li class="treeview">
         <a href="#">
+        <i class="fas fa-users"></i>
+          <span> Usuarios</span>
+          <span class="pull-right-container">
+            <i class="fas fa-angle-down"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="listar-usuarios.php"><i class="fas fa-th-list" style="margin-right: 8px"></i>Ver Todos</a></li>
+          <li><a href="crear-usuarios.php"><i class="fas fa-plus-circle" style="margin-right: 8px"></i>Agregar</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="#">
           <i class="fas fa-camera-retro"></i>
           <span> Productos</span>
           <span class="pull-right-container">
@@ -44,8 +60,8 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="#"><i class="fas fa-th-list" style="margin-right: 8px"></i>Ver Todos</a></li>
-          <li><a href="#"><i class="fas fa-plus-circle" style="margin-right: 8px"></i>Agregar</a></li>
+          <li><a href="listar-productos.php"><i class="fas fa-th-list" style="margin-right: 8px"></i>Ver Todos</a></li>
+          <li><a href="crear-productos.php"><i class="fas fa-plus-circle" style="margin-right: 8px"></i>Agregar</a></li>
         </ul>
       </li>
       <li class="treeview">
@@ -59,19 +75,6 @@
         <ul class="treeview-menu">
           <li><a href="#"><i class="fas fa-th-list" style="margin-right: 8px"></i>Ver Todas</a></li>
           <li><a href="#"><i class="fas fa-plus-circle" style="margin-right: 8px"></i>Agregar</a></li>
-        </ul>
-      </li>
-      <li class="treeview">
-        <a href="#">
-        <i class="fas fa-users"></i>
-          <span> Usuarios</span>
-          <span class="pull-right-container">
-            <i class="fas fa-angle-down"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="listar-usuarios.php"><i class="fas fa-th-list" style="margin-right: 8px"></i>Ver Todos</a></li>
-          <li><a href="crear-usuarios.php"><i class="fas fa-plus-circle" style="margin-right: 8px"></i>Agregar</a></li>
         </ul>
       </li>
   </section>

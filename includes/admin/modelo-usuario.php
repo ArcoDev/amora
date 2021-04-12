@@ -72,6 +72,7 @@ if($_POST['registro'] == 'actualizar') {
     }
     die(json_encode($respuesta));
 }
+/*Eliminar usuario */
 if($_POST['registro'] == 'eliminar') { 
     $id_borrar = $_POST['id'];
     try {
