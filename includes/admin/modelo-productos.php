@@ -2,20 +2,45 @@
 error_reporting(E_ALL ^ E_NOTICE);
 /* Crear productos y mandar ifo a la BD */
 include_once "functions/funciones.php";
-$urlFoto = $_POST['foto'];
 $nombre = $_POST['nombre'];
 $categoria =$_POST['categoria'];
 if($_POST['registro'] == 'nuevo') {
+    
+    /*Comprobar si se esta mandado los datos de file y de post
+    $respuesta = array(
+        'post' => $_POST,
+        'file' => $_FILES
+    );
+    die(json_encode($respuesta));
+    echo '<prev>';
+    var_dump($_POST);
+    echo '</prev>';
+    */
+    $directorio = "../../assets/images/";
+    if(!is_dir($directorio)) {
+        mkdir($directorio, 0755, true);
+    }
+    if(move_uploaded_file($_FILES['archivo_imagen']['tmp_name'], $directorio . $_FILES['archivo_imagen']['name'])) {
+        $imagen_url = $_FILES['archivo_imagen']['name'];
+        $imagen_resultado = "Se cargó correctamente";
+    } else {
+        $respuesta = array(
+            'respuesta' => error_get_last()
+         );
+    }
+
+
     try {
         include_once "functions/funciones.php";
-        $stmt = $con->prepare("INSERT INTO productos (foto, nombre_precio, id_cat) VALUES (?, ?, ?)");
-        $stmt->bind_param("ssi", $urlFoto, $nombre, $categoria);
+        $stmt = $con->prepare("INSERT INTO productos (nombre_precio, id_cat, url_foto) VALUES (?, ?, ?)");
+        $stmt->bind_param("sis", $nombre, $categoria, $imagen_url);
         $stmt->execute();
         $id_registro=$stmt->insert_id;
         if ($id_registro > 0){
             $respuesta=array(
                 'respuesta'=>'exito',
-                'id_producto'=>$id_registro
+                'id_producto'=>$id_registro,
+                'resultado_imagen' => $imagen_resultado
             );
         }else{
             $respuesta=array(

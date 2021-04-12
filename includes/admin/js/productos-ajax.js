@@ -1,14 +1,19 @@
 $(document).ready(function() {
     /* Crear un usuario y mandar info a la BD */
-    $('#guardar-producto').on('submit', function(e) {
+    $('#guardar-registro-archivo').on('submit', function(e) {
         e.preventDefault();
-        //lo que hace serializeArray() es iterar en todo los campos y nos crea unos objetos con los datos
-        var datos = $(this).serializeArray();
+
+        var datos = new FormData(this);
+
         $.ajax({
             type: $(this).attr('method'),
             data: datos,
             url: $(this).attr('action'),
             dataType: 'json',
+            contentType: false,
+            processData: false,
+            async: true,
+            cache: false,
             success: function(data) {
                 console.log(data);
                 var resultado = data;
@@ -24,7 +29,7 @@ $(document).ready(function() {
                 } else {
                     swal(
                         'Ooops!',
-                        'No se puede cargar correctamnte el producto',
+                        'No se puede cargar el producto',
                         'error'
                     );
                 }

@@ -29,12 +29,17 @@
           </div>
           <div class="box-body">
             <!-- form start -->
-            <form role="form" name="guardar-producto" id="guardar-producto" method="post" action="modelo-productos.php">
+            <form role="form" name="guardar-producto" id="guardar-producto-archivo" method="post" action="modelo-productos.php" enctype="multipart/form-data">
               <div class="box-body">
-                <div class="form-group">
+                <!--<div class="form-group">
                   <label for="foto">URL de la foto</label>
                   <input autocomplete="off" type="text" class="form-control" id="foto" name="foto"
                     placeholder="Ingresa la url de la foto, ejemplo: foto.png">
+                </div>-->
+                <div class="form-group">
+                  <label for="imagen-producto">Foto</label>
+                  <input type="file" id="imagen-producto" name="archivo_imagen">
+                  <p class="help-block">Agrega una imagen del producto</p>
                 </div>
                 <div class="form-group">
                   <label for="nombre">Nombre del producto y precio</label>
