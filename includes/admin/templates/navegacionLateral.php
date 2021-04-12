@@ -73,8 +73,8 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="#"><i class="fas fa-th-list" style="margin-right: 8px"></i>Ver Todas</a></li>
-          <li><a href="#"><i class="fas fa-plus-circle" style="margin-right: 8px"></i>Agregar</a></li>
+          <li><a href="listar-categorias.php"><i class="fas fa-th-list" style="margin-right: 8px"></i>Ver Todas</a></li>
+          <li><a href="crear-categorias.php"><i class="fas fa-plus-circle" style="margin-right: 8px"></i>Agregar</a></li>
         </ul>
       </li>
   </section>
