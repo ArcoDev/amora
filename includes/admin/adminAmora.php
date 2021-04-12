@@ -5,7 +5,7 @@
   include_once "templates/header.php";
   include_once "templates/barra.php";
   include_once "templates/navegacionLateral.php"; 
-
+  
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -24,16 +24,15 @@
     <!-- Default box -->
     <div class="box">
       <div class="box-header with-border">
-        <h3 class="box-title">Title</h3>
+        <h3 class="box-title">Administracion interno del sitio web de amora joyeria</h3>
       </div>
+      <center>
+      <img src="../../assets/img/amoraDark.png" alt="Logo amora" width="500" heigth="500">
       <div class="box-body">
-        Start creating your amazing application!
+        En el menu lateral, tienes las diferentes opciones para administrar el sitio web
       </div>
+      </center>
       <!-- /.box-body -->
-      <div class="box-footer">
-        Footer
-      </div>
-      <!-- /.box-footer-->
     </div>
     <!-- /.box -->
 

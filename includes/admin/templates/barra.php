@@ -1,3 +1,7 @@
+<?php 
+include_once "functions/funciones.php";
+include_once "functions/sesiones.php";
+?>
 <body class="hold-transition skin-blue sidebar-mini">
     <!-- Site wrapper -->
     <div class="wrapper">
@@ -23,7 +27,7 @@
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <span class="hidden-xs">Hola: Admin</span>
+                                <span class="hidden-xs">Hola: <?php echo $correoUsr?></span>
                             </a>
                             <ul class="dropdown-menu">
 

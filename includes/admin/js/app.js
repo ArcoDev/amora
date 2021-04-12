@@ -2,7 +2,7 @@ $(document).ready(function() {
     $('.sidebar-menu').tree()
     $('#registros').DataTable({
         'paging': true,
-        'pageLength': 10,
+        'pageLength': 5,
         'lengthChange': false,
         'searching': true,
         'ordering': true,
