@@ -1,3 +1,0 @@
-clave del sitio = 6Ldp848aAAAAAK8-uMqyb38H8ksv0zVtv2vn_h2z
-
-clave secreta = 6Ldp848aAAAAAC3tf6ATnUsyL3GR_Q4cOLxAgB5g
