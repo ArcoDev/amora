@@ -3,7 +3,10 @@ error_reporting(E_ALL ^ E_NOTICE);
 /* Crear productos y mandar ifo a la BD */
 include_once "functions/funciones.php";
 $nombre = $_POST['nombre'];
-$categoria =$_POST['categoria'];
+$categoria = $_POST['categoria'];
+$url_foto = $_POST['url_foto'];
+$id_registroEditar = $_POST["id_registro"];
+
 if($_POST['registro'] == 'nuevo') {
     
     /*Comprobar si se esta mandado los datos de file y de post
@@ -12,9 +15,7 @@ if($_POST['registro'] == 'nuevo') {
         'file' => $_FILES
     );
     die(json_encode($respuesta));
-    echo '<prev>';
-    var_dump($_POST);
-    echo '</prev>';
+    CHECAR VIDEO 777
     */
     $directorio = "../../assets/images/";
     if(!is_dir($directorio)) {
@@ -22,24 +23,22 @@ if($_POST['registro'] == 'nuevo') {
     }
     if(move_uploaded_file($_FILES['archivo_imagen']['tmp_name'], $directorio . $_FILES['archivo_imagen']['name'])) {
         $imagen_url = $_FILES['archivo_imagen']['name'];
-        $imagen_resultado = "Se cargó correctamente";
+        $imagen_resultado = "Se cargo correctamente";
     } else {
         $respuesta = array(
             'respuesta' => error_get_last()
-         );
+        );
     }
-
-
     try {
         include_once "functions/funciones.php";
-        $stmt = $con->prepare("INSERT INTO productos (nombre_precio, id_cat, url_foto) VALUES (?, ?, ?)");
-        $stmt->bind_param("sis", $nombre, $categoria, $imagen_url);
+        $stmt = $con->prepare("INSERT INTO productos (nombre_precio, nombre_cat, url_foto) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $nombre, $categoria, $imagen_url);
         $stmt->execute();
-        $id_registro=$stmt->insert_id;
-        if ($id_registro > 0){
+        $id_insertado = $stmt->insert_id;
+        if ($stmt->affected_rows){
             $respuesta=array(
                 'respuesta'=>'exito',
-                'id_producto'=>$id_registro,
+                'id_producto'=>$id_insertado,
                 'resultado_imagen' => $imagen_resultado
             );
         }else{
@@ -54,23 +53,35 @@ if($_POST['registro'] == 'nuevo') {
     }
     die(json_encode($respuesta));
 }
+
+
 /*Actualizar Registro de usuario */
 if($_POST['registro'] == 'actualizar') {
     
+    $directorio = "../../assets/images/";
+    if(!is_dir($directorio)) {
+        mkdir($directorio, 0755, true);
+    }
+    if(move_uploaded_file($_FILES['archivo_imagen']['tmp_name'], $directorio . $_FILES['archivo_imagen']['name'])) {
+        $imagen_url = $_FILES['archivo_imagen']['name'];
+        $imagen_resultado = "Se cargo correctamente";
+
+    } 
     try {
-        if (empty($_POST['foto'])) {
-            $stmt = $con->prepare("UPDATE productos set foto =?, nombre_precio = ?, id_cat = ?, editado = NOW() WHERE id_pro =?");
-            $stmt->bind_param("ssii", $urlFoto, $nombre, $categoria, $id_registroEditar);
+        if($_FILES['archivo_imagen']['size' > 0]) {
+            //con imagen
+            $stmt = $con->prepare("UPDATE productos SET nombre_precio = ?, nombre_cat = ?, url_foto = ?, WHERE id_pro = ?");
+            $stmt->bind_param("sisi", $nombre, $categoria, $url_foto, $id_registroEditar);
         } else {
-            $id_registroEditar = $_POST["id_registro"];
-            $stmt = $con->prepare("UPDATE productos SET foto = ?, nombre_precio = ?, id_cat = ?, editado = NOW() WHERE id_pro = ?");
-            $stmt->bind_param("sssi", $urlFoto, $nombre, $categoria, $id_registroEditar);
+            //sin imagen
+            $stmt = $con->prepare("UPDATE productos SET nombre_precio = ?, nombre_cat = ? WHERE id_pro = ?");
+            $stmt->bind_param("sii", $nombre, $categoria, $id_registroEditar);
         }
-        $stmt->execute();
-        if($stmt->affected_rows) {
+        $estado = $stmt->execute();
+        if($estado == true) {
             $respuesta = array(
                 'respuesta' => 'actualizar',
-                'actualizar' => $stmt->insert_id
+                'actualizar' => $id_registroEditar
             );
         } else {
             $respuesta + array(

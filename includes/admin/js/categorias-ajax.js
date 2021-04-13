@@ -18,9 +18,6 @@ $(document).ready(function() {
                         'Se agrego correctamente.',
                         'success'
                     );
-                    setTimeout(function() {
-                        window.location.href = 'listar-categorias.php';
-                    }, 2000);
                 } else {
                     swal(
                         'Ooops!',
@@ -34,9 +31,7 @@ $(document).ready(function() {
                         'Se edito correctamente.',
                         'success'
                     );
-                    setTimeout(function() {
-                        window.location.href = 'listar-categorias.php';
-                    }, 2000);
+
                 }
             }
         });
@@ -79,9 +74,6 @@ $(document).ready(function() {
                                 'Registro eliminado',
                                 'success'
                             );
-                            setTimeout(function() {
-                                window.location.href = 'listar-categorias.php';
-                            }, 1000);
                             jQuery("[data-id='" + resultado.id_eliminado + "'").parents('tr').remove();
                         } else {
                             swal(

@@ -29,35 +29,28 @@
           <!-- /.box-header -->
           <div class="box-body">
             <table id="registros" class="table table-bordered table-striped">
-              <h3 style ="margin-top: -15px">Guia de categorias</h3>
-              <div style="display: flex;">
-                <p style="margin-right: 10px"><strong>1.- </strong>Anillos</p>
-                <p style="margin-right: 10px"><strong>2.- </strong>Aretes</p>
-                <p style="margin-right: 10px"><strong>3.- </strong>Collares</p>
-                <p style="margin-right: 10px"><strong>4.- </strong>Pulseras</p>
-              </div>
               <thead>
                 <tr>
-                  <th>Url foto</th>
                   <th>Nombre y precio</th>
                   <th>Categoria</th>
+                  <th>Foto</th>
                   <th>Acciones</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
                     try {
-                      $sql = "SELECT id_pro, foto, nombre_precio, id_cat FROM productos";
-                      $resultadp = $con->query($sql);
+                      $sql = "SELECT id_pro, nombre_precio, id_cat, nombre_cat, url_foto FROM productos";
+                      $resultado = $con->query($sql);
                     } catch (Exception $e) {
                       $error = $e->getMessage();
                       echo $error;
                     }
-                    while ($producto = $resultadp->fetch_assoc()) {?>
+                    while ($producto = $resultado->fetch_assoc()) {?>
                 <tr>
-                  <td><?php echo $producto['foto'] ?></td>
                   <td><?php echo $producto['nombre_precio'] ?></td>
-                  <td><?php echo $producto['id_cat'] ?></td>
+                  <td><?php echo $producto['nombre_cat'] ?></td>
+                  <td><center><img src="../../assets/images/<?php echo $producto['url_foto']; ?>" alt="Productos del catalo de amora" width="200" height ="100"></center></td>
                   <td>
                     <a href="editar-productos.php?id=<?php echo $producto['id_pro']?>"
                       class="btn btn-warning btn-flat margin" title="Editar">
@@ -73,11 +66,10 @@
               </tbody>
               <tfoot>
                 <tr>
-                  <th>Url foto</th>
                   <th>Nombre y precio</th>
                   <th>Categoria</th>
+                  <th>Foto</th>
                   <th>Acciones</th>
-
                 </tr>
               </tfoot>
             </table>

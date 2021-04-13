@@ -34,16 +34,15 @@
             <?php
                 $sql ="SELECT * FROM `productos` WHERE `id_pro` = $id";
                 $resultado = $con->query($sql);
-                $producto = $resultado->fetch_assoc();
+                $producto = $resultado->fetch_assoc(); 
+                echo '<prev>';
+                  var_dump($producto);
+                echo '</prev>';
+
              ?>
             <!-- form start -->
-            <form role="form" name="guardar-producto" id="guardar-producto" method="post" action="modelo-productos.php">
+            <form role="form" name="guardar-producto" id="guardar-producto-archivo" method="post" action="modelo-productos.php" enctype="multipart/form-data">
               <div class="box-body">
-                <div class="form-group">
-                  <label for="foto">URL de la foto</label>
-                  <input autocomplete="off" type="text" class="form-control" id="foto" name="foto"
-                    placeholder="Ingresa la url de la foto, ejemplo: foto.png" value="<?php echo $producto['foto'] ?>">
-                </div>
                 <div class="form-group">
                   <label for="nombre">Nombre del producto y precio</label>
                   <input autocomplete="off" type="text" class="form-control" id="nombre" name="nombre"
@@ -51,17 +50,27 @@
                 </div>
                 <!-- select -->
                 <div class="form-group">
-                  <label>Selecciona una categoria</label>
                   <select name="categoria" class="form-control">
+                  <option value="">Selecciona una categoria</option>
                     <option value="1">1.- Anillos</option>
                     <option value="2">2.- Aretes</option>
                     <option value="3">3.- Collares</option>
                     <option value="4">4.- Pulseras</option>
                   </select>
                 </div>
+                <div class="form-group">
+                  <label for="imagen_actual">Imagen Actual: </label>
+                  <br>
+                  <img src="../../assets/images/<?php echo $producto['url_foto']; ?>" alt="Productos del catalo de amora" width="200" height ="200">
+                </div>
+                <div class="form-group">
+                  <label for="imagen-producto">Foto</label>
+                  <input type="file" id="imagen-producto" name="archivo_imagen">
+                  <p class="help-block">Agrega una imagen del producto</p>
+                </div> 
                 <div class="box-footer">
                   <input type="hidden" name="registro" value="actualizar">
-                  <input type="hidden" name="id_registro" value="<?php echo $id?>">
+                  <input type="hidden" name="id_registro"  value="<?php echo $id ?>">
                   <button type="submit" class="btn btn-primary">Actualizar</button>
                 </div>
             </form>

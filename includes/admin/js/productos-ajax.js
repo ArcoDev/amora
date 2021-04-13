@@ -1,6 +1,6 @@
 $(document).ready(function() {
     /* Crear un usuario y mandar info a la BD */
-    $('#guardar-registro-archivo').on('submit', function(e) {
+    $('#guardar-producto-archivo').on('submit', function(e) {
         e.preventDefault();
 
         var datos = new FormData(this);
@@ -23,9 +23,6 @@ $(document).ready(function() {
                         'Se agrego correctamente.',
                         'success'
                     );
-                    setTimeout(function() {
-                        window.location.href = 'listar-productos.php';
-                    }, 2000);
                 } else {
                     swal(
                         'Ooops!',
@@ -39,9 +36,6 @@ $(document).ready(function() {
                         'Se edito correctamente.',
                         'success'
                     );
-                    setTimeout(function() {
-                        window.location.href = 'listar-productos.php';
-                    }, 2000);
                 }
             }
         });
@@ -84,9 +78,6 @@ $(document).ready(function() {
                                 'Registro eliminado',
                                 'success'
                             );
-                            setTimeout(function() {
-                                window.location.href = 'listar-productos.php';
-                            }, 1000);
                             jQuery("[data-id='" + resultado.id_eliminado + "'").parents('tr').remove();
                         } else {
                             swal(

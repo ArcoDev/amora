@@ -37,24 +37,24 @@
                     placeholder="Ingresa la url de la foto, ejemplo: foto.png">
                 </div>-->
                 <div class="form-group">
-                  <label for="imagen-producto">Foto</label>
-                  <input type="file" id="imagen-producto" name="archivo_imagen">
-                  <p class="help-block">Agrega una imagen del producto</p>
-                </div>
-                <div class="form-group">
                   <label for="nombre">Nombre del producto y precio</label>
                   <input autocomplete="off" type="text" class="form-control" id="nombre" name="nombre"
                     placeholder="Ingresa el nombre del producto y su precio, ejemplo: anillo dorado, $250." >
                 </div>
                 <!-- select -->
                 <div class="form-group">
-                  <label>Selecciona una categoria</label>
                   <select name="categoria" class="form-control">
-                    <option value="1">1.- Anillos</option>
-                    <option value="2">2.- Aretes</option>
-                    <option value="3">3.- Collares</option>
-                    <option value="4">4.- Pulseras</option>
+                  <option value="">Selecciona una categoria</option>
+                    <option value="anillos">1.- Anillos</option>
+                    <option value="aretes">2.- Aretes</option>
+                    <option value="collares">3.- Collares</option>
+                    <option value="pulseras">4.- Pulseras</option>
                   </select>
+                </div>
+                <div class="form-group">
+                  <label for="imagen-producto">Foto</label>
+                  <input type="file" id="imagen-producto" name="archivo_imagen">
+                  <p class="help-block">Agrega una imagen del producto</p>
                 </div>
                 <div class="box-footer">
                   <input type="hidden" name="registro" value="nuevo">
