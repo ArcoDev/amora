@@ -55,16 +55,22 @@ require "conexion.php";
         <h2 id="txtAnillos" class="titulo">Anillos</h2>
         <div id="anillos" class="anillos">
             <?php
-            $consulta = $con->query("SELECT * FROM productos WHERE nombre_cat = 'anillos' ");
-            while ($imagenes = mysqli_fetch_array($consulta)) {
-                echo '<img loading="lazy" class="sizeImg" title="' . $imagenes["nombre_precio"] . '" src="../assets/images/' . $imagenes["url_foto"] . '" alt="imagenes de los productos de amora">';
-            }
-            ?>
+            $consulta = $con->query("SELECT * FROM productos WHERE nombre_cat = 'anillos' "); ?>
+            <div class="cajaImg">
+            <?php 
+                while ($imagenes = mysqli_fetch_array($consulta)) { 
+                    echo  '<div class="infoImg">
+                              <img loading="lazy" class="sizeImg" title="' . $imagenes["nombre_precio"] . '" src="../assets/images/' . $imagenes["url_foto"] . '" alt="imagenes de los productos de amora">
+                              <div class="ribbon"><span>$250</span></div>
+                              <p>Precio</p>
+                           </div>';
+                }?>
+            </div>
         </div>
 
         <h2 id="txtAretes" class="titulo">Aretes</h2>
 
-        <div id="aretes" class="aretes">
+       <div id="aretes" class="aretes">
             <?php
             $consulta = $con->query("SELECT * FROM productos WHERE nombre_cat = 'aretes' ");
             while ($imagenes = mysqli_fetch_array($consulta)) {
