@@ -25,19 +25,22 @@ require "conexion.php";
     <a href="https://wa.link/zdwtie" class="float" target="_blank">
         <i class="fab fa-whatsapp my-float"></i>
     </a>
-    <nav id="expandir" class="navegacion">
-        <a id="logo" href="../index.html" title="Amora Joyeria">
-            <div class="logo">
-            </div>
-        </a>
-        <ul id="items" class="items">
-            <a href="../index.html">
-                <li>Regresar</li>
+    <!--Navbar-->
+    <div id="contenido" class="contenido">
+        <nav id="nav" class="navegacion">
+            <a href="../index.html" title="Amora Joyeria">
+                <div id="logo" class="logo"></div>
             </a>
-        </ul>
-        <i id="bars" class="fa fa-bars nav-mov" onclick="abrirNav();"></i>
-        <i id="close" class="fas fa-times nav-mov" onclick="cerrarNav();"></i>
-    </nav>
+            <div class="items">
+                <ul id="enlaces" class="enlaces" style="list-style: none;">
+                    <a class="active" href="../index.html">
+                        <li>Regresar</li>
+                    </a>
+                </ul>
+                <i id="menMov" class="fas fa-bars menMov"></i>
+            </div>
+        </nav>
+    </div>
     <section class="cajaCategorias">
         <div class="titulo">
             <h1>Catálogo</h1>

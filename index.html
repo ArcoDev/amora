@@ -20,29 +20,30 @@
         <i class="fab fa-whatsapp my-float"></i>
     </a>
     <!--Navbar-->
-    <nav id="expandir" class="navegacion">
-        <a id="logo" href="#">
-            <div class="logo">
+    <div id="contenido" class="contenido">
+        <nav id="nav" class="navegacion">
+            <a href="./index.html" title="Amora Joyeria">
+                <div id="logo" class="logo"></div>
+            </a>
+            <div class="items">
+                <ul id="enlaces" class="enlaces" style="list-style: none;">
+                    <a class="active" onclick="return remover();" href="./index.html">
+                        <li>Inicio</li>
+                    </a>
+                    <a onclick="return remover();" href="#nosotros">
+                        <li>Nosotros</li>
+                    </a>
+                    <a onclick="return remover();" href="./includes/catalogo.php">
+                        <li>Catálogo</li>
+                    </a>
+                    <a onclick="return remover();" href="#contacto">
+                        <li>Contacto</li>
+                    </a>
+                </ul>
+                <i id="menMov" class="fas fa-bars menMov"></i>
             </div>
-        </a>
-        <ul id="items" class="items">
-            <a href="index.html">
-                <li>Inicio</li>
-            </a>
-            <a href="#nosotros">
-                <li>Nosotros</li>
-            </a>
-            <!--<a href="https://buff.ly/36eGPvn" target="_blank">-->
-            <a href="./includes/catalogo.php">
-                <li>Catálogo</li>
-            </a>
-            <a href="#contacto">
-                <li>Contacto</li>
-            </a>
-        </ul>
-        <i id="bars" class="fa fa-bars nav-mov" onclick="abrirNav();"></i>
-        <i id="close" class="fas fa-times nav-mov" onclick="cerrarNav();"></i>
-    </nav>
+        </nav>
+    </div>
     <!-- Carousel -->
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -74,21 +75,18 @@
             <a href="./includes/catalogo.php" target="_blank">Catálogo</a>
         </div>
     </section>
-
-    <!--Feed de instagram-
-    <div class="elfsight-app-47cf4ccd-e946-4096-ade2-e5847edcb7ae"></div>-->
     <!-- Galeria -->
     <section class="galeria">
         <h2>Galería</h2>
         <div class="imagenes">
-            <img loading="lazy" src="./assets/img/categorias/anillos/anillo1.png" alt="">
-            <img loading="lazy" src="./assets/img/categorias/anillos/anillo2.png" alt="">
-            <img loading="lazy" src="./assets/img/categorias/aretes/aretes1.png" alt="">
-            <img loading="lazy" src="./assets/img/categorias/aretes/aretes2.png" alt="">
-            <img loading="lazy" src="./assets/img/categorias/pulseras/pulseras1.png" alt="">
-            <img loading="lazy" src="./assets/img/categorias/pulseras/pulseras2.png" alt="">
-            <img loading="lazy" src="./assets/img/categorias/collares//collar24.png" alt="">
-            <img loading="lazy" src="./assets/img/categorias/collares/collar21.png" alt="">
+            <img loading="lazy" src="./assets/img/anillo6.png" alt="galeria de productos de amora">
+            <img loading="lazy" src="./assets/img/anillo8.png" alt="galeria de productos de amora">
+            <img loading="lazy" src="./assets/img/juego13.png" alt="galeria de productos de amora">
+            <img loading="lazy" src="./assets/img/aretes2.png" alt="galeria de productos de amora">
+            <img loading="lazy" src="./assets/img/collar25.png" alt="galeria de productos de amora">
+            <img loading="lazy" src="./assets/img/FOTO18.png" alt="galeria de productos de amora">
+            <img loading="lazy" src="./assets/img/juego4.png" alt="galeria de productos de amora">
+            <img loading="lazy" src="./assets/img/FOTO1_4.png" alt="galeria de productos de amora">
         </div>
         <a href="./includes/catalogo.php">Ver más</a>
     </section>
@@ -105,15 +103,6 @@
             </div>
         </div>
         <div class="formulario">
-            <!--<form action="./includes/email.php" method="POST" id="form" onsubmit="return validar();">
-                <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre">
-                <input type="email" name="correo" id=correo" placeholder="Ingresa tu email">
-                <input type="text" name="mensaje" id="mensaje" placeholder="Dejanos tu mensaje">
-                <div class="g-recaptcha" data-sitekey="6Ldp848aAAAAAK8-uMqyb38H8ksv0zVtv2vn_h2z"
-                    style="margin: 15px auto 0 auto;"></div>
-                <button type="submit">Enviar</button>
-                <p class="alertas" id="alertas"></p>
-            </form>-->
             <div class="correo">
                 <a href="mailto:contacto@amorajoyeria.com">
                     <i class="far fa-envelope"></i>
@@ -133,13 +122,8 @@
     <footer class="footer">
         <h2>Sitio Desarrollado por <a href="https://awsoftware.mx/" target="_blank"><span>A W Software</span></a></h2>
     </footer>
-    <!--reCaptcha-->
-    <script src='https://www.google.com/recaptcha/api.js?hl=es' async defer></script>
-    <!--Feed de instagram-->
-    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
     <!--Script Personal -->
     <script src="./js/main.js"></script>
-    <script src="./js/contacto.js"></script>
     <!-- CDN Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>

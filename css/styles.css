@@ -28,132 +28,132 @@ a {
 
 body {
   overflow-x: hidden;
-}
-
-/* Color texto placeholder inputs */
-::-webkit-input-placeholder {
-  color: #fff;
-}
-
-:-moz-placeholder {
-  /* Firefox 18- */
-  color: #fff;
-}
-
-::-moz-placeholder {
-  /* Firefox 19+ */
-  color: #fff;
-}
-
-:-ms-input-placeholder {
-  color: #fff;
+  list-style: none;
 }
 
 /* Variables */
 /*Navegacion */
-.navegacion {
-  position: absolute;
+.contenido {
   width: 100%;
-  height: 50px;
-  padding: 10px 0 10px 30px;
+}
+
+.contenido .navegacion {
+  width: 100%;
+  height: 60px;
   background: #fff;
-  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
   z-index: 100;
+  position: fixed;
+  margin-top: -10px;
+  padding: 15px 0;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
-@media screen and (max-width: 920px) {
-  .navegacion {
-    padding: 10px 0;
+@media screen and (max-width: 767px) {
+  .contenido .navegacion {
+    width: 100%;
+    background: #fff;
+    justify-content: space-between;
+    margin-top: -20px;
   }
 }
 
-.navegacion a .logo {
-  width: 150px;
-  height: 150px;
+.contenido .navegacion .logo {
+  width: 170px;
+  height: 170px;
   background-image: url("../assets/img/amoraDark.png");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
-.navegacion .items {
+@media screen and (max-width: 767px) {
+  .contenido .navegacion .logo {
+    width: 150px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .contenido .navegacion .logo {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.contenido .navegacion .enlaces {
   display: flex;
-  padding-right: 30px;
+  margin-top: 35px;
 }
 
-@media screen and (max-width: 920px) {
-  .navegacion .items {
-    padding-right: 0;
-  }
-}
-
-.navegacion .items a,
-.navegacion .items li {
-  position: relative;
-  text-decoration: none;
-  list-style: none;
-  color: #000;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-right: 1.3rem;
-  margin-top: 10px;
-  transition: all .3s ease-in;
-  cursor: pointer;
-}
-
-.navegacion .items a:hover,
-.navegacion .items li:hover {
-  color: #f15d4a;
-}
-
-@media screen and (max-width: 920px) {
-  .navegacion .items a,
-  .navegacion .items li {
+@media screen and (max-width: 767px) {
+  .contenido .navegacion .enlaces {
+    position: fixed;
+    width: 100vw;
+    height: calc(100% -65px);
+    background: #fff;
+    top: -100vh;
     text-align: center;
-    font-size: 1.8rem;
-    line-height: 2.4rem;
-    margin-left: -5rem;
+    transition: all .4s;
+    flex-direction: column;
   }
 }
 
-@media screen and (max-width: 920px) {
-  .navegacion .items {
-    display: none;
-    margin-top: 3.3rem;
-  }
+.contenido .navegacion .enlaces a {
+  color: #000;
+  font-family: "Gotham-Bold";
+  font-size: 18px;
+  font-weight: 900;
+  margin-right: 30px;
+  transition: all .4s ease-in-out;
+  text-transform: uppercase;
 }
 
-.navegacion .nav-mov {
-  font-size: 2.5rem;
+.contenido .navegacion .enlaces a:hover {
   color: #f15d4a;
-  padding-right: 20px;
-  display: none;
 }
 
-@media screen and (max-width: 920px) {
-  .navegacion .nav-mov {
-    display: block;
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .contenido .navegacion .enlaces a {
+    font-size: 16px;
   }
 }
 
-/*Clases extras para el menu en mobile que se agregan con JS*/
-.show {
-  height: 100vh;
+@media screen and (max-width: 767px) {
+  .contenido .navegacion .enlaces a {
+    margin: 50px 10px 0 0;
+    line-height: 30px;
+    font-size: 20px;
+  }
+}
+
+.contenido .navegacion a.active {
+  font-weight: bold;
+  color: #f15d4a;
+}
+
+.contenido .navegacion .menMov {
+  font-size: 2rem;
+  color: #f15d4a;
+  cursor: pointer;
+  display: none;
+  margin-top: 16px;
+}
+
+@media screen and (max-width: 767px) {
+  .contenido .navegacion .menMov {
+    display: block;
+    margin-right: 10px;
+  }
+}
+
+.contenido .navegacion ul.show {
+  top: 34px;
   width: 100%;
-  position: fixed;
-  transition: all .6s ease-out;
-  align-items: flex-start;
-  padding-top: 20px;
-  z-index: 100;
-  background: #fff;
+  left: 0;
+  height: 100vh;
 }
 
 .itemsMov {
@@ -167,7 +167,7 @@ body {
 
 /*Fin Navegacion */
 /* Carousel */
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .carousel-inner {
     height: 70vh;
   }
@@ -177,7 +177,7 @@ body {
   height: 100% !important;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .carousel-inner .imgMov {
     height: 550px !important;
   }
@@ -193,7 +193,7 @@ body {
   position: relative;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .carousel-indicators li {
     left: 0;
   }
@@ -207,7 +207,7 @@ body {
   display: flex;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .nosotros {
     flex-wrap: wrap-reverse;
     padding: 30px 0 0 0;
@@ -222,7 +222,7 @@ body {
   justify-content: center;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .nosotros .caja1 {
     align-items: unset;
     justify-content: unset;
@@ -240,7 +240,7 @@ body {
   background-repeat: no-repeat;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .nosotros .caja1 .imgNos {
     width: 100%;
     height: 100%;
@@ -256,7 +256,7 @@ body {
   justify-content: center;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .nosotros .caja2 {
     justify-content: flex-start;
     width: 100%;
@@ -271,10 +271,16 @@ body {
   margin-bottom: 15px;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .nosotros .caja2 h2 {
     margin-bottom: 30px;
     font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .nosotros .caja2 h2 {
+    font-size: 3.3rem;
   }
 }
 
@@ -285,10 +291,16 @@ body {
   margin-bottom: 40px;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .nosotros .caja2 p {
     width: 100%;
     text-align: justify;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .nosotros .caja2 p {
+    font-size: .9rem;
   }
 }
 
@@ -317,11 +329,17 @@ body {
   transform: scale(1.03);
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .nosotros .caja2 a {
     padding: 5px;
     font-size: 1.8rem;
     width: 75%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .nosotros .caja2 a {
+    width: 55%;
   }
 }
 
@@ -347,7 +365,7 @@ Galeria
   margin-bottom: 50px;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .galeria {
     margin-top: -10rem;
   }
@@ -377,7 +395,7 @@ Galeria
   transform: scale(1.03);
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .galeria .imagenes img {
     width: 100%;
     margin-bottom: 10px;
@@ -413,7 +431,7 @@ Contacto
   padding: 60px 0 50px 0;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .contacto {
     flex-wrap: wrap;
     padding-bottom: 50px;
@@ -428,7 +446,7 @@ Contacto
   justify-content: center;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .contacto .txtContacto {
     width: 100%;
   }
@@ -442,12 +460,18 @@ Contacto
   text-transform: uppercase;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .contacto .txtContacto h2 {
     text-align: center;
     margin-top: -200px;
     font-size: 2.5rem;
     padding-left: 5px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .contacto .txtContacto h2 {
+    font-size: 2.3rem;
   }
 }
 
@@ -526,7 +550,7 @@ Contacto
         }*/
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .contacto .formulario {
     margin-top: -280px;
     width: 100%;
@@ -560,11 +584,18 @@ Contacto
   font-family: "Gotham-Med";
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .contacto .formulario .correo a p,
   .contacto .formulario .telefono a p {
     font-size: 1.2rem;
     margin-top: 7px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .contacto .formulario .correo a p,
+  .contacto .formulario .telefono a p {
+    font-size: 1.4rem;
   }
 }
 
@@ -581,7 +612,7 @@ Contacto
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.575), 0 6px 10px 0 black;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .footer {
     margin-top: 180px;
   }
@@ -592,7 +623,7 @@ Contacto
   font-size: 1.2rem;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .footer h2 {
     font-size: 1rem;
   }
@@ -621,7 +652,7 @@ Contacto
   z-index: 100;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .float {
     right: 10px;
   }
@@ -735,7 +766,7 @@ Contacto
   flex-direction: column;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .gracias .cajaGracias {
     width: 80%;
   }
@@ -748,7 +779,7 @@ Contacto
   text-align: center;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .gracias .cajaGracias h2 {
     font-size: 2.6rem;
   }
@@ -775,7 +806,7 @@ Contacto
   color: #000;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .gracias .cajaGracias a {
     padding: 10px 20px;
     font-size: 1.5rem;
@@ -800,7 +831,7 @@ Categorias
 ============================================*/
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .cajaCategorias {
     padding-bottom: 0;
   }
@@ -820,7 +851,7 @@ Categorias
   letter-spacing: 10px;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .cajaCategorias .titulo h1 {
     font-size: 2.4rem;
   }
@@ -832,7 +863,7 @@ Categorias
   margin-left: 35px;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .cajaCategorias .categorias {
     align-self: unset;
     margin-left: 0;
@@ -851,7 +882,7 @@ Categorias
   outline: none;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .cajaCategorias .categorias select {
     font-size: 1.2rem;
   }
@@ -861,7 +892,7 @@ Categorias
   font-family: "Gotham-Med";
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .cajaCategorias .categorias option {
     font-size: 1.1rem;
   }
@@ -890,7 +921,7 @@ Categorias
   margin-right: 10px;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .cajaCategorias .anillos .sizeImg,
   .cajaCategorias .aretes .sizeImg,
   .cajaCategorias .collares .sizeImg,
@@ -917,7 +948,7 @@ Categorias
   transition: all .2s ease-in-out;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .cajaCategorias .anillos .cajaImg .infoImg,
   .cajaCategorias .aretes .cajaImg .infoImg,
   .cajaCategorias .collares .cajaImg .infoImg,
@@ -1011,7 +1042,7 @@ Categorias
   margin: -15px 0 25px 0;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .cajaCategorias .anillos,
   .cajaCategorias .aretes,
   .cajaCategorias .collares,
@@ -1049,7 +1080,7 @@ Pagina de administracion del catalogo
   text-transform: uppercase;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .admin h1 {
     font-size: 1.3rem;
     margin-bottom: 20px;
@@ -1064,7 +1095,7 @@ Pagina de administracion del catalogo
   margin: 20px;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .admin .opciones {
     margin: 0;
   }
@@ -1089,7 +1120,7 @@ Pagina de administracion del catalogo
   cursor: pointer;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .admin .opciones a {
     margin-bottom: 10px;
   }
@@ -1103,7 +1134,7 @@ Pagina de administracion del catalogo
   display: none;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .admin .cajaInfo {
     margin-top: 20px;
     flex-wrap: wrap;
@@ -1120,7 +1151,7 @@ Pagina de administracion del catalogo
   text-align: center;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .admin fieldset {
     padding: 10px 0 40px 0;
   }
@@ -1137,7 +1168,7 @@ Pagina de administracion del catalogo
   margin-right: 5rem;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .admin .cargarInfo {
     width: 100%;
     margin-right: 0;
@@ -1158,7 +1189,7 @@ Pagina de administracion del catalogo
   font-size: 1rem;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .admin .cargarInfo input {
     font-size: .9rem;
   }
@@ -1200,7 +1231,7 @@ Pagina de administracion del catalogo
   width: 55%;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .mostrarInfo {
     width: 100%;
   }
@@ -1212,7 +1243,7 @@ Pagina de administracion del catalogo
   color: #fff;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   .mostrarInfo table {
     margin-left: 10px;
   }

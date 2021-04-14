@@ -31,130 +31,124 @@ a {
 
 body {
     overflow-x: hidden;
-}
-
-
-/* Color texto placeholder inputs */
-
-::-webkit-input-placeholder {
-    color: #fff;
-}
-
-:-moz-placeholder {
-    /* Firefox 18- */
-    color: #fff;
-}
-
-::-moz-placeholder {
-    /* Firefox 19+ */
-    color: #fff;
-}
-
-:-ms-input-placeholder {
-    color: #fff;
+    list-style: none;
 }
 
 
 /* Variables */
 
-$movil: 920px;
+$movil: 767px;
+$tabletH: 768px;
+$tabletV: 1024px;
 
 /*Navegacion */
 
-.navegacion {
-    position: absolute;
+.contenido {
     width: 100%;
-    height: 50px;
-    padding: 10px 0 10px 30px;
-    background: #fff;
-    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 100;
-    @media screen and (max-width: $movil) {
-        & {
-            padding: 10px 0;
-        }
-    }
-    a .logo {
-        width: 150px;
-        height: 150px;
-        background-image: url("../assets/img/amoraDark.png");
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
-    .items {
+    .navegacion {
+        width: 100%;
+        height: 60px;
+        background: #fff;
         display: flex;
-        padding-right: 30px;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 100;
+        position: fixed;
+        margin-top: -10px;
+        padding: 15px 0;
+        box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
         @media screen and (max-width: $movil) {
             & {
-                padding-right: 0;
+                width: 100%;
+                background: #fff;
+                justify-content: space-between;
+                margin-top: -20px;
             }
         }
-        a,
-        li {
-            position: relative;
-            text-decoration: none;
-            list-style: none;
-            color: #000;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-right: 1.3rem;
-            margin-top: 10px;
-            transition: all .3s ease-in;
-            cursor: pointer;
-            &:hover {
-                color: #f15d4a;
-            }
+        .logo {
+            width: 170px;
+            height: 170px;
+            background-image: url("../assets/img/amoraDark.png");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
             @media screen and (max-width: $movil) {
                 & {
-                    text-align: center;
-                    font-size: 1.8rem;
-                    line-height: 2.4rem;
-                    margin-left: -5rem;
+                    width: 150px;
+                    margin-top: 10px;
+                }
+            }
+            @media screen and (min-width: $tabletH) and (max-width: $tabletV) {
+                & {
+                    width: 150px;
+                    height: 150px;
                 }
             }
         }
-        @media screen and (max-width: $movil) {
-            & {
-                display: none;
-                margin-top: 3.3rem;
+        .enlaces {
+            display: flex;
+            margin-top: 35px;
+            @media screen and (max-width: $movil) {
+                & {
+                    position: fixed;
+                    width: 100vw;
+                    height: calc(100% -65px);
+                    background: #fff;
+                    top: -100vh;
+                    text-align: center;
+                    transition: all .4s;
+                    flex-direction: column;
+                }
+            }
+            a {
+                color: #000;
+                font-family: "Gotham-Bold";
+                font-size: 18px;
+                font-weight: 900;
+                margin-right: 30px;
+                transition: all .4s ease-in-out;
+                text-transform: uppercase;
+                &:hover {
+                    color: #f15d4a;
+                }
+                @media screen and (min-width: $tabletH) and (max-width: $tabletV) {
+                    & {
+                        font-size: 16px;
+                    }
+                }
+                @media screen and (max-width: $movil) {
+                    & {
+                        margin: 50px 10px 0 0;
+                        line-height: 30px;
+                        font-size: 20px;
+                    }
+                }
             }
         }
-    }
-    //Menu hamburgesa y close
-    .nav-mov {
-        font-size: 2.5rem;
-        color: #f15d4a;
-        padding-right: 20px;
-        display: none;
-        @media screen and (max-width: $movil) {
-            & {
-                display: block;
+        a.active {
+            font-weight: bold;
+            color: #f15d4a;
+        }
+        .menMov {
+            font-size: 2rem;
+            color: #f15d4a;
+            cursor: pointer;
+            display: none;
+            margin-top: 16px;
+            @media screen and (max-width: $movil) {
+                & {
+                    display: block;
+                    margin-right: 10px;
+                }
             }
         }
+        ul.show {
+            top: 34px;
+            width: 100%;
+            left: 0;
+            height: 100vh;
+        }
     }
-}
-
-
-/*Clases extras para el menu en mobile que se agregan con JS*/
-
-.show {
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    transition: all .6s ease-out;
-    align-items: flex-start;
-    padding-top: 20px;
-    z-index: 100;
-    background: #fff;
 }
 
 .itemsMov {
@@ -273,6 +267,11 @@ $movil: 920px;
                     font-size: 3rem;
                 }
             }
+            @media screen and (min-width: $tabletH) and (max-width: $tabletV) {
+                & {
+                    font-size: 3.3rem;
+                }
+            }
         }
         p {
             width: 90%;
@@ -283,6 +282,11 @@ $movil: 920px;
                 & {
                     width: 100%;
                     text-align: justify;
+                }
+            }
+            @media screen and (min-width: $tabletH) and (max-width: $tabletV) {
+                & {
+                    font-size: .9rem;
                 }
             }
             span {
@@ -312,6 +316,11 @@ $movil: 920px;
                     padding: 5px;
                     font-size: 1.8rem;
                     width: 75%;
+                }
+            }
+            @media screen and (min-width: $tabletH) and (max-width: $tabletV) {
+                & {
+                    width: 55%;
                 }
             }
         }
@@ -435,6 +444,11 @@ Contacto
                     padding-left: 5px;
                 }
             }
+            @media screen and (min-width: $tabletH) and (max-width: $tabletV) {
+                & {
+                    font-size: 2.3rem;
+                }
+            }
         }
         .redes {
             display: flex;
@@ -485,6 +499,11 @@ Contacto
                     & {
                         font-size: 1.2rem;
                         margin-top: 7px;
+                    }
+                }
+                @media screen and (min-width: $tabletH) and (max-width: $tabletV) {
+                    & {
+                        font-size: 1.4rem;
                     }
                 }
             }
