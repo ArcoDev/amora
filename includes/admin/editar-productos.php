@@ -35,9 +35,6 @@
                 $sql ="SELECT * FROM `productos` WHERE `id_pro` = $id";
                 $resultado = $con->query($sql);
                 $producto = $resultado->fetch_assoc(); 
-                echo '<prev>';
-                  var_dump($producto);
-                echo '</prev>';
 
              ?>
             <!-- form start -->

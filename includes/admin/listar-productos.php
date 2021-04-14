@@ -41,7 +41,7 @@
               <tbody>
                 <?php
                     try {
-                      $sql = "SELECT id_pro, nombre, precio, id_cat, nombre_cat, url_foto FROM productos";
+                      $sql = "SELECT id_pro, nombre, precio, nombre_cat, url_foto FROM productos";
                       $resultado = $con->query($sql);
                     } catch (Exception $e) {
                       $error = $e->getMessage();
