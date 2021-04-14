@@ -11,17 +11,17 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="../../index.html"><b>Amora</b> Joyeria</a>
+            <a href="../../index.html"><b>Amora</b> Joyería</a>
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
             <p class="login-box-msg">Inicia sesion</p>
             <form name="login-usuario-form" id="login-usuario" method="post" action="modelo-usuario.php">
                 <div class="form-group has-feedback">
-                    <input type="email" class="form-control" name="correo" placeholder="Ingresa tu correo electronico">
+                    <input type="email" class="form-control" name="correo" placeholder="Ingresa tu correo electrónico">
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" class="form-control" name="contrasena" placeholder="Ingresa tu contrasena">
+                    <input type="password" class="form-control" name="contrasena" placeholder="Ingresa tu contraseña">
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
