@@ -508,57 +508,6 @@ Contacto
                 }
             }
         }
-        /*form {
-            width: 90%;
-            display: flex;
-            flex-direction: column;
-
-            input {
-                padding: 20px 0 0 5px;
-                background: transparent;
-                border: none;
-                padding-bottom: 15px;
-                border-bottom: 2px solid #fff;
-                margin-bottom: 30px;
-                border-radius: 10px;
-                outline: none;
-                color: #fff;
-                font-family: "Gotham-Med";
-
-                &:hover {
-                    border-bottom: 3px solid #fff;
-                }
-            }
-
-
-            button {
-                width: 20%;
-                background: transparent;
-                color: #fff;
-                font-weight: bold;
-                font-size: 1.2rem;
-                border: 2px solid #fff;
-                padding: 10px 60px;
-                cursor: pointer;
-                transition: all .4s ease-in;
-                margin: 20px auto;
-                outline: none;
-
-                &:hover {
-                    background: #fff;
-                    color: #000;
-                }
-            }
-
-            .alertas {
-                width: 250px;
-                text-align: center;
-                margin: auto;
-                background: #fff;
-                color: red;
-                font-family: "Gotham-Med";
-            }
-        }*/
     }
 }
 
@@ -828,6 +777,7 @@ Categorias
             font-family: "Gotham-Med";
             cursor: pointer;
             outline: none;
+            background: #fff;
             @media screen and (max-width: $movil) {
                 & {
                     font-size: 1.2rem;
