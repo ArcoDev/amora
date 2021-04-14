@@ -31,7 +31,8 @@
             <table id="registros" class="table table-bordered table-striped">
               <thead>
                 <tr>
-                  <th>Nombre y precio</th>
+                  <th>Nombre</th>
+                  <th>Precio</th>
                   <th>Categoria</th>
                   <th>Foto</th>
                   <th>Acciones</th>
@@ -40,7 +41,7 @@
               <tbody>
                 <?php
                     try {
-                      $sql = "SELECT id_pro, nombre_precio, id_cat, nombre_cat, url_foto FROM productos";
+                      $sql = "SELECT id_pro, nombre, precio, id_cat, nombre_cat, url_foto FROM productos";
                       $resultado = $con->query($sql);
                     } catch (Exception $e) {
                       $error = $e->getMessage();
@@ -48,7 +49,8 @@
                     }
                     while ($producto = $resultado->fetch_assoc()) {?>
                 <tr>
-                  <td><?php echo $producto['nombre_precio'] ?></td>
+                  <td><?php echo $producto['nombre'] ?></td>
+                  <td><?php echo $producto['precio'] ?></td>
                   <td><?php echo $producto['nombre_cat'] ?></td>
                   <td><center><img src="../../assets/images/<?php echo $producto['url_foto']; ?>" alt="Productos del catalo de amora" width="200" height ="100"></center></td>
                   <td>
@@ -66,7 +68,8 @@
               </tbody>
               <tfoot>
                 <tr>
-                  <th>Nombre y precio</th>
+                  <th>Nombre</th>
+                  <th>Precio</th>
                   <th>Categoria</th>
                   <th>Foto</th>
                   <th>Acciones</th>

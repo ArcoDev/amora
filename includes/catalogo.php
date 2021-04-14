@@ -60,9 +60,9 @@ require "conexion.php";
             <?php 
                 while ($imagenes = mysqli_fetch_array($consulta)) { 
                     echo  '<div class="infoImg">
-                              <img loading="lazy" class="sizeImg" title="' . $imagenes["nombre_precio"] . '" src="../assets/images/' . $imagenes["url_foto"] . '" alt="imagenes de los productos de amora">
-                              <div class="ribbon"><span>$250</span></div>
-                              <p>Precio</p>
+                              <img loading="lazy" class="sizeImg" title="' . $imagenes["nombre"] . '" src="../assets/images/' . $imagenes["url_foto"] . '" alt="imagenes de los productos de amora">
+                              <div class="ribbon"><span>'.$imagenes["precio"].'</span></div>
+                              <p>'.$imagenes["nombre"].'</p>
                            </div>';
                 }?>
             </div>
@@ -72,30 +72,48 @@ require "conexion.php";
 
        <div id="aretes" class="aretes">
             <?php
-            $consulta = $con->query("SELECT * FROM productos WHERE nombre_cat = 'aretes' ");
-            while ($imagenes = mysqli_fetch_array($consulta)) {
-                echo '<img loading="lazy" class="sizeImg" title="' . $imagenes["nombre_precio"] . '" src="../assets/images/' . $imagenes["url_foto"] . '" alt="imagenes de los productos de amora">';
-            }
-            ?>
+            $consulta = $con->query("SELECT * FROM productos WHERE nombre_cat = 'aretes' ")?>
+            <div class="cajaImg">
+            <?php 
+                while ($imagenes = mysqli_fetch_array($consulta)) { 
+                    echo  '<div class="infoImg">
+                              <img loading="lazy" class="sizeImg" title="' . $imagenes["nombre"] . '" src="../assets/images/' . $imagenes["url_foto"] . '" alt="imagenes de los productos de amora">
+                              <div class="ribbon"><span>'.$imagenes["precio"].'</span></div>
+                              <p>'.$imagenes["nombre"].'</p>
+                           </div>';
+                }?>
+            </div>
         </div>
 
         <h2 id="txtCollares" class="titulo">Collares</h2>
         <div id="collares" class="collares">
             <?php
-            $consulta = $con->query("SELECT * FROM productos WHERE nombre_cat = 'collares'");
-            while ($imagenes = mysqli_fetch_array($consulta)) {
-                echo '<img loading="lazy" class="sizeImg" title="' . $imagenes["nombre_precio"] . '" src="../assets/images/' . $imagenes["url_foto"] . '" alt="imagenes de los productos de amora">';
-            }
-            ?>
+            $consulta = $con->query("SELECT * FROM productos WHERE nombre_cat = 'collares'");?>
+            <div class="cajaImg">
+            <?php 
+                while ($imagenes = mysqli_fetch_array($consulta)) { 
+                    echo  '<div class="infoImg">
+                              <img loading="lazy" class="sizeImg" title="' . $imagenes["nombre"] . '" src="../assets/images/' . $imagenes["url_foto"] . '" alt="imagenes de los productos de amora">
+                              <div class="ribbon"><span>'.$imagenes["precio"].'</span></div>
+                              <p>'.$imagenes["nombre"].'</p>
+                           </div>';
+                }?>
+            </div>
         </div>
         <h2 id="txtPulseras" class="titulo">Pulseras</h2>
         <div id="pulseras" class="pulseras">
             <?php
-            $consulta = $con->query("SELECT * FROM productos WHERE nombre_cat = 'pulseras' ");
-            while ($imagenes = mysqli_fetch_array($consulta)) {
-                echo '<img loading="lazy" class="sizeImg" title="' . $imagenes["nombre_precio"] . '" src="../assets/images/' . $imagenes["url_foto"] . '" alt="imagenes de los productos de amora">';
-            }
-            ?>
+            $consulta = $con->query("SELECT * FROM productos WHERE nombre_cat = 'pulseras' ");?>
+            <div class="cajaImg">
+            <?php 
+                while ($imagenes = mysqli_fetch_array($consulta)) { 
+                    echo  '<div class="infoImg">
+                              <img loading="lazy" class="sizeImg" title="' . $imagenes["nombre"] . '" src="../assets/images/' . $imagenes["url_foto"] . '" alt="imagenes de los productos de amora">
+                              <div class="ribbon"><span>'.$imagenes["precio"].'</span></div>
+                              <p>'.$imagenes["nombre"].'</p>
+                           </div>';
+                }?>
+            </div>
         </div>
     </section>
     <footer class="footer">

@@ -3,6 +3,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 /* Crear productos y mandar ifo a la BD */
 include_once "functions/funciones.php";
 $nombre = $_POST['nombre'];
+$precio = $_POST['precio'];
 $categoria = $_POST['categoria'];
 $url_foto = $_POST['url_foto'];
 $id_registroEditar = $_POST["id_registro"];
@@ -31,8 +32,8 @@ if($_POST['registro'] == 'nuevo') {
     }
     try {
         include_once "functions/funciones.php";
-        $stmt = $con->prepare("INSERT INTO productos (nombre_precio, nombre_cat, url_foto) VALUES (?, ?, ?)");
-        $stmt->bind_param("sss", $nombre, $categoria, $imagen_url);
+        $stmt = $con->prepare("INSERT INTO productos (nombre, precio, nombre_cat, url_foto) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $nombre, $precio, $categoria, $imagen_url);
         $stmt->execute();
         $id_insertado = $stmt->insert_id;
         if ($stmt->affected_rows){
@@ -70,12 +71,12 @@ if($_POST['registro'] == 'actualizar') {
     try {
         if($_FILES['archivo_imagen']['size' > 0]) {
             //con imagen
-            $stmt = $con->prepare("UPDATE productos SET nombre_precio = ?, nombre_cat = ?, url_foto = ?, WHERE id_pro = ?");
-            $stmt->bind_param("sisi", $nombre, $categoria, $url_foto, $id_registroEditar);
+            $stmt = $con->prepare("UPDATE productos SET nombre = ?, precio = ?, nombre_cat = ?, url_foto = ?, WHERE id_pro = ?");
+            $stmt->bind_param("ssisi", $nombre, $precio, $categoria, $url_foto, $id_registroEditar);
         } else {
             //sin imagen
-            $stmt = $con->prepare("UPDATE productos SET nombre_precio = ?, nombre_cat = ? WHERE id_pro = ?");
-            $stmt->bind_param("sii", $nombre, $categoria, $id_registroEditar);
+            $stmt = $con->prepare("UPDATE productos SET nombre = ?, precio = ?, nombre_cat = ? WHERE id_pro = ?");
+            $stmt->bind_param("ssii", $nombre, $precio, $categoria, $id_registroEditar);
         }
         $estado = $stmt->execute();
         if($estado == true) {

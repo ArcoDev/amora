@@ -832,14 +832,10 @@ Categorias
         height: 95%;
         margin-bottom: 20px;
         margin-right: 10px;
-        transition: all .2s ease-in-out;
         @media screen and (max-width: $movil) {
             & {
                 width: 100%;
             }
-        }
-        &:hover {
-            transform: scale(1.05);
         }
     }
     .anillos,
@@ -858,9 +854,17 @@ Categorias
         }
         .cajaImg {
             display: flex;
+            flex-wrap: wrap;
             .infoImg {
-                width: 35%;
+                width: 33%;
+                height: 33%;
                 position: relative;
+                transition: all .2s ease-in-out;
+                @media screen and (max-width: $movil) {
+                    & {
+                        width: 100%;
+                    }
+                }
                 .ribbon {
                     position: absolute;
                     left: -5px;
@@ -868,11 +872,12 @@ Categorias
                     z-index: 1;
                     overflow: hidden;
                     width: 75px;
-                    height: 75px;
+                    height: 80px;
                     text-align: right;
+                    padding: 10px 0;
                 }
                 .ribbon span {
-                    font-size: 10px;
+                    font-size: 14px;
                     font-weight: bold;
                     color: #FFF;
                     text-transform: uppercase;
@@ -882,8 +887,8 @@ Categorias
                     -webkit-transform: rotate(-45deg);
                     width: 100px;
                     display: block;
-                    background: #79A70A;
-                    background: linear-gradient(#F79E05 0%, #8F5408 100%);
+                    background: #f15d4a;
+                    background: linear-gradient(#f15d4a 0%, #b94637 100%);
                     box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
                     position: absolute;
                     top: 19px;
@@ -895,10 +900,10 @@ Categorias
                     left: 0px;
                     top: 100%;
                     z-index: -1;
-                    border-left: 3px solid #8F5408;
+                    border-left: 3px solid #b94637;
                     border-right: 3px solid transparent;
                     border-bottom: 3px solid transparent;
-                    border-top: 3px solid #8F5408;
+                    border-top: 3px solid #b94637;
                 }
                 .ribbon span::after {
                     content: "";
@@ -907,9 +912,12 @@ Categorias
                     top: 100%;
                     z-index: -1;
                     border-left: 3px solid transparent;
-                    border-right: 3px solid #8F5408;
+                    border-right: 3px solid #b94637;
                     border-bottom: 3px solid transparent;
-                    border-top: 3px solid #8F5408;
+                    border-top: 3px solid #b94637;
+                }
+                &:hover {
+                    transform: scale(1.05);
                 }
             }
         }

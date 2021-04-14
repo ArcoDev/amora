@@ -37,14 +37,20 @@
                     placeholder="Ingresa la url de la foto, ejemplo: foto.png">
                 </div>-->
                 <div class="form-group">
-                  <label for="nombre">Nombre del producto y precio</label>
+                  <label for="nombre">Nombre</label>
                   <input autocomplete="off" type="text" class="form-control" id="nombre" name="nombre"
-                    placeholder="Ingresa el nombre del producto y su precio, ejemplo: anillo dorado, $250." >
+                    placeholder="Ingresa el nombre del producto" >
+                </div>
+                <div class="form-group">
+                  <label for="precio">Precio</label>
+                  <input autocomplete="off" type="text" class="form-control" id="precio" name="precio"
+                    placeholder="Ingresa el precio del producto" >
                 </div>
                 <!-- select -->
                 <div class="form-group">
+                <label for="precio">Categoría</label>
                   <select name="categoria" class="form-control">
-                  <option value="">Selecciona una categoria</option>
+                  <option value="">Selecciona una categoría</option>
                     <option value="anillos">1.- Anillos</option>
                     <option value="aretes">2.- Aretes</option>
                     <option value="collares">3.- Collares</option>

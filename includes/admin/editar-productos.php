@@ -44,9 +44,14 @@
             <form role="form" name="guardar-producto" id="guardar-producto-archivo" method="post" action="modelo-productos.php" enctype="multipart/form-data">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="nombre">Nombre del producto y precio</label>
+                  <label for="nombre">Nombre</label>
                   <input autocomplete="off" type="text" class="form-control" id="nombre" name="nombre"
-                    placeholder="Ingresa el nombre del producto y su precio, ejemplo: anillo dorado, $250." value="<?php echo $producto['nombre_precio'] ?>">
+                  placeholder="Ingresa el nombre del producto" value="<?php echo $producto['nombre'] ?>">
+                </div>
+                <div class="form-group">
+                  <label for="precio">Precio</label>
+                  <input autocomplete="off" type="text" class="form-control" id="precio" name="precio"
+                  placeholder="Ingresa el precio del producto" value="<?php echo $producto['precio'] ?>">
                 </div>
                 <!-- select -->
                 <div class="form-group">
