@@ -14,7 +14,7 @@
   <section class="content-header">
     <h1>
       Amora
-      <small>joyeria</small>
+      <small>joyería</small>
     </h1>
   </section>
 
@@ -24,12 +24,12 @@
     <!-- Default box -->
     <div class="box">
       <div class="box-header with-border">
-        <h3 class="box-title">Administracion interno del sitio web de amora joyeria</h3>
+        <h3 class="box-title">Administración interna del sitio web de amora joyería</h3>
       </div>
       <center>
       <img src="../../assets/img/amoraDark.png" alt="Logo amora" width="500" heigth="500">
       <div class="box-body">
-        En el menu lateral, tienes las diferentes opciones para administrar el sitio web
+        En el menú lateral, tienes las diferentes opciones para administrar el sitio web.
       </div>
       </center>
       <!-- /.box-body -->

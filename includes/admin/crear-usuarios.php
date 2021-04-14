@@ -42,9 +42,9 @@
                     placeholder="Ingresa tu nombre completo">
                 </div>
                 <div class="form-group">
-                  <label for="password">Contrasena</label>
+                  <label for="password">Contraseña</label>
                   <input autocomplete="off" type="password" class="form-control" id="password" name="contrasena"
-                    placeholder="Contrasena para iniciar sesion">
+                    placeholder="Contraseña para iniciar sesion">
                 </div>
                 <div class="box-footer">
                   <input type="hidden" name="registro" value="nuevo">

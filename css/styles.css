@@ -945,7 +945,7 @@ Categorias
 .cajaCategorias .aretes .cajaImg .infoImg .ribbon span,
 .cajaCategorias .collares .cajaImg .infoImg .ribbon span,
 .cajaCategorias .pulseras .cajaImg .infoImg .ribbon span {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   color: #FFF;
   text-transform: uppercase;
@@ -998,6 +998,17 @@ Categorias
 .cajaCategorias .collares .cajaImg .infoImg:hover,
 .cajaCategorias .pulseras .cajaImg .infoImg:hover {
   transform: scale(1.05);
+}
+
+.cajaCategorias .anillos .cajaImg .infoImg p,
+.cajaCategorias .aretes .cajaImg .infoImg p,
+.cajaCategorias .collares .cajaImg .infoImg p,
+.cajaCategorias .pulseras .cajaImg .infoImg p {
+  font-size: 15px;
+  color: #000;
+  font-family: "Gotham-Med";
+  text-transform: uppercase;
+  margin: -15px 0 25px 0;
 }
 
 @media screen and (max-width: 920px) {

@@ -877,7 +877,7 @@ Categorias
                     padding: 10px 0;
                 }
                 .ribbon span {
-                    font-size: 14px;
+                    font-size: 16px;
                     font-weight: bold;
                     color: #FFF;
                     text-transform: uppercase;
@@ -918,6 +918,13 @@ Categorias
                 }
                 &:hover {
                     transform: scale(1.05);
+                }
+                p {
+                    font-size: 15px;
+                    color: #000;
+                    font-family: "Gotham-Med";
+                    text-transform: uppercase;
+                    margin: -15px 0 25px 0;
                 }
             }
         }

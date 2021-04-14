@@ -25,7 +25,7 @@
     <!-- /.search form -->
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
-      <li class="header">Menu de Administracion</li>
+      <li class="header">Menú de Administración</li>
       <!-- <li class="treeview">
         <a href="#">
         <i class="fas fa-th"></i><span>Dashboard</span>
@@ -67,7 +67,7 @@
       <li class="treeview">
         <a href="#">
           <i class="fas fa-book"></i>
-          <span> Categorias</span>
+          <span> Categorías</span>
           <span class="pull-right-container">
             <i class="fas fa-angle-down"></i>
           </span>
