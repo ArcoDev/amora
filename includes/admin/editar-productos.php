@@ -54,10 +54,10 @@
                 <div class="form-group">
                   <select name="categoria" class="form-control">
                   <option value="">Selecciona una categoria</option>
-                    <option value="1">1.- Anillos</option>
-                    <option value="2">2.- Aretes</option>
-                    <option value="3">3.- Collares</option>
-                    <option value="4">4.- Pulseras</option>
+                    <option value="anillos">1.- Anillos</option>
+                    <option value="aretes">2.- Aretes</option>
+                    <option value="collares">3.- Collares</option>
+                    <option value="pulseras">4.- Pulseras</option>
                   </select>
                 </div>
                 <div class="form-group">
@@ -72,7 +72,7 @@
                 </div> 
                 <div class="box-footer">
                   <input type="hidden" name="registro" value="actualizar">
-                  <input type="hidden" name="id_registro"  value="<?php echo $id ?>">
+                  <input type="hidden" name="id_registro"  value="<?php echo $producto['id_pro']; ?>">
                   <button type="submit" class="btn btn-primary">Actualizar</button>
                 </div>
             </form>

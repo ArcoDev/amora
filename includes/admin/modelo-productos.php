@@ -66,17 +66,20 @@ if($_POST['registro'] == 'actualizar') {
     if(move_uploaded_file($_FILES['archivo_imagen']['tmp_name'], $directorio . $_FILES['archivo_imagen']['name'])) {
         $imagen_url = $_FILES['archivo_imagen']['name'];
         $imagen_resultado = "Se cargo correctamente";
-
-    } 
+    } else {
+        $respuesta = array(
+            'respuesta' => error_get_last()
+        );
+    }
     try {
         if($_FILES['archivo_imagen']['size' > 0]) {
             //con imagen
-            $stmt = $con->prepare("UPDATE productos SET nombre = ?, precio = ?, nombre_cat = ?, url_foto = ?, WHERE id_pro = ?");
-            $stmt->bind_param("ssisi", $nombre, $precio, $categoria, $url_foto, $id_registroEditar);
+            $stmt = $con->prepare("UPDATE productos SET nombre = ?, precio = ?, url_foto = ?, nombre_cat = ?, WHERE id_pro = ?");
+            $stmt->bind_param("ssssi", $nombre, $precio, $imagen_url, $categoria, $id_registroEditar);
         } else {
             //sin imagen
             $stmt = $con->prepare("UPDATE productos SET nombre = ?, precio = ?, nombre_cat = ? WHERE id_pro = ?");
-            $stmt->bind_param("ssii", $nombre, $precio, $categoria, $id_registroEditar);
+            $stmt->bind_param("sssi", $nombre, $precio, $categoria, $id_registroEditar);
         }
         $estado = $stmt->execute();
         if($estado == true) {

@@ -64,7 +64,7 @@
                 </div>
                 <div id="loader" class="form-group" style="display: none;">
                   <img src="../../assets/img/preloader.gif" alt="Cargando" style="margin: 10px 0 10px 20px;">
-                  <p>Espere un momento porfavor...</p>
+                  <p>Espere un momento porfavor, se esta cargando la imagen...</p>
                 </div>
                 <div class="box-footer">
                   <input type="hidden" name="registro" value="nuevo">
