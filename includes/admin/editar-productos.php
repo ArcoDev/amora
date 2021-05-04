@@ -22,13 +22,13 @@
   </section>
 
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-10">
       <!-- Main content -->
       <section class="content">
         <!-- Default box -->
         <div class="box">
           <div class="box-header with-border">
-            <h3 class="box-title">Editar Usuario</h3>
+            <h3 class="box-title">Editar Producto</h3>
           </div>
           <div class="box-body">
             <?php

@@ -72,9 +72,9 @@ if($_POST['registro'] == 'actualizar') {
         );
     }
     try {
-        if($_FILES['archivo_imagen']['size' > 0]) {
+        if($_FILES['archivo_imagen']['size'] > 0) {
             //con imagen
-            $stmt = $con->prepare("UPDATE productos SET nombre = ?, precio = ?, url_foto = ?, nombre_cat = ?, WHERE id_pro = ?");
+            $stmt = $con->prepare("UPDATE productos SET nombre = ?, precio = ?, url_foto = ?, nombre_cat = ? WHERE id_pro = ?");
             $stmt->bind_param("ssssi", $nombre, $precio, $imagen_url, $categoria, $id_registroEditar);
         } else {
             //sin imagen
