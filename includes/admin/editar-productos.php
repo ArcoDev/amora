@@ -68,7 +68,16 @@
                 <div class="form-group">
                   <label for="imagen-producto">Foto</label>
                   <input type="file" id="imagen-producto" name="archivo_imagen">
-                  <p class="help-block">Agrega una imagen del producto</p>
+                  <div style="display: flex; flex-wrap: wrap; justify-content: space-between: text-align: center; margin-top: 10px;">
+                    <p style="width: 50%;" class="help-block">• Medida recomendada de la imagen: <strong>1500 x
+                        1500</strong> </p>
+                    <p style="width: 50%;" class="help-block">• Peso ideal de la imagen, menos de <strong>1
+                        MB</strong>
+                    </p>
+                    <p style="width: 100%;" class="help-block">• Extenciónes permitidas: <strong>jpg, png,
+                        svg</strong>
+                    </p>
+                  </div>
                 </div> 
                 <div class="box-footer">
                   <input type="hidden" name="registro" value="actualizar">
